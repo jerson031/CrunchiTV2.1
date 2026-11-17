@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crunchyroll Casero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Barra lateral mínima estilo Crunchyroll TV -->
+  <aside class="sidebar">
+    <div class="logo">CR<span>TV</span></div>
+    <nav>
+      <button class="nav-btn active" data-tab="inicio">
+        <span class="nav-icon">⌂</span>
+        <span class="nav-label">Inicio</span>
+      </button>
+      <button class="nav-btn" data-tab="catalogo">
+        <span class="nav-icon">⊞</span>
+        <span class="nav-label">Catálogo</span>
+      </button>
+      <button class="nav-btn" data-tab="buscar">
+        <span class="nav-icon">⌕</span>
+        <span class="nav-label">Buscar</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- VISTA 1: INICIO -->
+    <div id="view-inicio" class="tab-view">
+      <section class="hero" id="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-info">
+          <span class="badge">SUBTITULADO EN ESPAÑOL</span>
+          <h1 id="hero-title">Selecciona un anime</h1>
+          <p id="hero-desc">Usa las flechas del control para moverte y OK para ver detalles.</p>
+          <div class="hero-actions">
+            <button class="play-btn" id="hero-play" data-row="1" data-col="0">
+              ▶ Ver Detalles y Episodios
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="carousel-section">
+        <div class="section-title-row">
+          <h2>En Emisión Hoy (Simulcast)</h2>
+          <span class="section-hint">Usa ◄ ► para explorar • ▲ para ver ficha</span>
+        </div>
+        <div class="cards-row" id="cards-row"></div>
+      </section>
+    </div>
+
+    <!-- VISTA 2: CATÁLOGO CON FILTROS Y PAGINACIÓN -->
+    <div id="view-catalogo" class="tab-view hidden">
+      <div class="catalog-header">
+        <div class="catalog-title-bar">
+          <h2>Catálogo Sub Español HD</h2>
+          <span class="section-hint">Pulsa Atrás para volver a Inicio</span>
+        </div>
+        <div class="catalog-filters">
+          <select id="filter-genre" class="cr-select">
+            <option value="ALL">Género: Todos</option>
+            <option value="Action">Acción</option>
+            <option value="Adventure">Aventura</option>
+            <option value="Comedy">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasía</option>
+            <option value="Horror">Terror / Horror</option>
+            <option value="Gore">Gore</option>
+            <option value="Thriller">Thriller / Suspenso</option>
+            <option value="Psychological">Psicológico</option>
+            <option value="Mystery">Misterio</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Supernatural">Sobrenatural</option>
+            <option value="Slice of Life">Recuentos de la vida</option>
+            <option value="Sports">Deportes</option>
+            <option value="Mecha">Mecha</option>
+          </select>
+          <select id="filter-sort" class="cr-select">
+            <option value="POPULAR">Orden: Popularidad</option>
+            <option value="TRENDING">Orden: Tendencia</option>
+            <option value="SCORE">Orden: Mejor Puntuación</option>
+            <option value="NEWEST">Orden: Más Recientes</option>
+            <option value="TITLE">Orden: Título (A - Z)</option>
+          </select>
+          <select id="filter-year" class="cr-select">
+            <option value="">Año: Todos</option>
+            <option value="RELEASING">En Emisión (Simulcast)</option>
+            <option value="2026">Año: 2026</option>
+            <option value="2025">Año: 2025</option>
+            <option value="2024">Año: 2024</option>
+            <option value="2023">Año: 2023</option>
+            <option value="2020_2022">2020 - 2022</option>
+            <option value="CLASSICS">Clásicos (Antes de 2020)</option>
+          </select>
+          <select id="filter-format" class="cr-select">
+            <option value="">Formato: Todos</option>
+            <option value="TV">Formato: Serie TV</option>
+            <option value="MOVIE">Formato: Películas</option>
+            <option value="OVA">Formato: OVA / ONA / Especial</option>
+          </select>
+        </div>
+        <div id="catalog-range-pills" class="range-pills-row"></div>
+      </div>
+      <div class="catalog-grid" id="catalog-grid"></div>
+    </div>
+
+
+    <!-- VISTA 3: BUSCADOR DEDICADO -->
+    <div id="view-buscar" class="tab-view hidden">
+      <div class="catalog-header">
+        <div class="catalog-title-bar">
+          <h2>Buscar Anime</h2>
+          <span class="section-hint">Presiona OK en el cuadro para escribir</span>
+        </div>
+        <div class="search-box-row">
+          <input type="text" id="anime-search-input"
+            placeholder="Ej. Jujutsu Kaisen, Frieren, One Piece, Texhnolyze..." />
+          <button id="anime-search-btn" class="play-btn">Buscar</button>
+        </div>
+      </div>
+      <div class="catalog-grid" id="search-grid"></div>
+    </div>
+
+    <!-- VISTA 4: DETALLE DEL ANIME Y SELECTOR DE EPISODIOS -->
+    <div id="view-detail" class="tab-view hidden">
+      <div class="detail-hero" id="detail-hero">
+        <div class="hero-overlay detail-overlay"></div>
+        <div class="detail-content">
+          <div class="detail-top-bar">
+            <button id="detail-back-btn" class="osd-icon-btn">← Volver</button>
+          </div>
+          <div class="detail-main-row">
+            <img id="detail-cover" class="detail-poster" src="" alt="" />
+            <div class="detail-meta">
+              <span class="badge" id="detail-genres">SUBTITULADO EN ESPAÑOL</span>
+              <h1 id="detail-title">Título del Anime</h1>
+              <p id="detail-desc">Sinopsis...</p>
+              <div class="detail-actions">
+                <button id="detail-play-first" class="play-btn">▶ Ver Episodio 1</button>
+                <button id="detail-play-latest" class="detail-secondary-btn">⚡ Ver Último Episodio</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="detail-episodes-section">
+        <div class="detail-ep-header">
+          <div class="detail-ep-title-row">
+            <h2 id="detail-ep-count">Episodios</h2>
+            <span class="section-hint">Selecciona un episodio para reproducir</span>
+          </div>
+          <div id="detail-range-pills" class="range-pills-row"></div>
+        </div>
+        <div id="detail-episodes-grid" class="detail-episodes-grid"></div>
+      </section>
+    </div>
+
+    <!-- Barra inferior de selección rápida de capítulos -->
+    <section class="episode-bar hidden" id="episode-bar">
+      <div class="episode-bar-header">
+        <span class="now-playing-dot">●</span>
+        <span id="now-playing-text">Último visto: -</span>
+        <span class="ep-hint">(Usa ◄ ► para cambiar de episodio • ▲ para volver)</span>
+        <button id="close-episode-bar-btn" class="close-ep-bar-btn" title="Cerrar barra">✕</button>
+      </div>
+      <div class="episode-list" id="episode-list"></div>
+    </section>
+  </main>
+
+  <!-- Interfaz transparente del reproductor estilo Crunchyroll (OSD sobre MPV en PC) -->
+  <div id="player-osd" class="player-osd hidden">
+    <div class="osd-top">
+      <button id="osd-back-btn" class="osd-icon-btn">← Volver al catálogo</button>
+      <div id="osd-episode-title" class="osd-title">Episodio</div>
+    </div>
+
+    <div id="osd-settings-menu" class="osd-settings-menu hidden">
+      <div id="settings-main-view">
+        <div class="menu-row" id="menu-open-audio" tabindex="0">
+          <span>Audio</span>
+          <span class="menu-value" id="current-audio-label">Japanese ›</span>
+        </div>
+        <div class="menu-row" id="menu-open-subs" tabindex="0">
+          <span>Subtitles/CC</span>
+          <span class="menu-value" id="current-sub-label">Español (América Latina) ›</span>
+        </div>
+      </div>
+
+      <div id="settings-tracks-view" class="hidden">
+        <div class="menu-header" id="menu-back-btn" tabindex="0">‹ <span id="submenu-title">Audio</span></div>
+        <div id="tracks-container" class="tracks-list"></div>
+      </div>
+    </div>
+
+    <div class="osd-bottom">
+      <div class="progress-container" id="osd-progress-bar">
+        <div class="progress-bg">
+          <div class="progress-fill" id="osd-progress-fill"></div>
+          <div class="progress-thumb" id="osd-progress-thumb"></div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="controls-left">
+          <button id="osd-play-btn" class="osd-ctrl-btn" title="Pausar/Reanudar">⏸</button>
+          <button id="osd-next-btn" class="osd-ctrl-btn" title="Siguiente Episodio">⏭</button>
+          <span class="osd-time" id="osd-time-display">0:00 / 24:00</span>
+        </div>
+        <div class="controls-right">
+          <button id="osd-gear-btn" class="osd-ctrl-btn" title="Audio y Subtítulos">⚙</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal limpio de notificación/error navegable con D-Pad -->
+  <div id="tv-alert-modal" class="tv-modal hidden">
+    <div class="tv-modal-box">
+      <div class="tv-modal-badge">AVISO DE REPRODUCCIÓN</div>
+      <h3 id="tv-alert-title">No se pudo iniciar el episodio</h3>
+      <p id="tv-alert-message">Ocurrió un problema al resolver el enlace.</p>
+      <button id="tv-alert-ok-btn" class="play-btn focused">Aceptar</button>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>

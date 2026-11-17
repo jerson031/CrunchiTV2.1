@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://android.com"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra superior con degradado, botón Volver al catálogo y título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#B3000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="20dp">
+
+        <Button
+            android:id="@+id/cr_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:backgroundTint="#26FFFFFF"
+            android:focusable="true"
+            android:paddingHorizontal="16dp"
+            android:text="← Volver al catálogo"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cr_episode_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Reproduciendo episodio"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Barra inferior estilo Crunchyroll con barra naranja #F47521 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#CC000000"
+        android:orientation="vertical"
+        android:paddingHorizontal="36dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="24dp">
+
+        <androidx.media3.ui.DefaultTimeBar
+            android:id="@id/exo_progress"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            app:bar_height="5dp"
+            app:buffered_color="#66FFFFFF"
+            app:played_color="#F47521"
+            app:scrubber_color="#F47521"
+            app:scrubber_dragged_size="18dp"
+            app:scrubber_enabled_size="14dp"
+            app:unplayed_color="#33FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@id/exo_rew"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Retroceder"
+                android:focusable="true"
+                android:tint="#FFFFFF" />
+
+            <ImageButton
+                android:id="@id/exo_play_pause"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Pausar o Reanudar"
+                android:focusable="true"
+                android:tint="#F47521" />
+
+            <ImageButton
+                android:id="@id/exo_ffwd"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Adelantar"
+                android:focusable="true"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:id="@id/exo_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" / "
+                android:textColor="#AAAAAA"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@id/exo_duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp" />
+
+          <Button
+             android:id="@+id/cr_tracks_btn"
+             android:layout_width="wrap_content"
+             android:layout_height="42dp"
+             android:backgroundTint="#26FFFFFF"
+             android:focusable="true"
+             android:paddingHorizontal="14dp"
+             android:text="⚙ Audio / Subtítulos"
+             android:textAllCaps="false"
+             android:textColor="#FFFFFF"
+             android:textSize="13sp"
+             android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

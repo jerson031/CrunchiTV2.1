@@ -1,0 +1,9 @@
+node_modules/
+src-tauri/target/
+src-tauri/bin/*.exe
+src-tauri/gen/android/.gradle/
+src-tauri/gen/android/buildSrc/.gradle/
+src-tauri/gen/android/app/build/
+*.apk
+*.idsig
+*.keystore
