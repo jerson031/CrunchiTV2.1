@@ -29,7 +29,7 @@ fn parse_nyaa_size_mb(raw_size: &str) -> u64 {
 }
 
 /// Prioriza 1080p comprimido (WEB-DL/WEBRip/BDRip) sobre 720p, y deja BD Remux/ISO gigantes como respaldo
-fn calculate_resolution_score(title: &str) -> u8 {
+pub fn calculate_resolution_score(title: &str) -> u8 {
     let low = title.to_lowercase();
     if low.contains("remux") || low.contains("bdmv") || low.contains(".iso") {
         return 1;
@@ -46,7 +46,7 @@ fn calculate_resolution_score(title: &str) -> u8 {
 }
 
 /// Valida de forma 100% genérica que el torrent corresponda al episodio o sea un pack/película completa
-fn title_matches_episode(title: &str, episode: i32) -> bool {
+pub fn title_matches_episode(title: &str, episode: i32) -> bool {
     let low = title.to_lowercase();
 
     // 1. Si es un pack explícito de temporada/serie, lo permitimos (torbox.rs seleccionará el archivo exacto)
@@ -172,7 +172,7 @@ pub fn title_matches_season_context(torrent_title: &str, requested_titles: &[Str
     true
 }
 /// Calcula la probabilidad real de contener Español Latino/España (CR > MultiSub occidental > BILI > Inglés)
-fn calculate_spanish_score(title: &str, category: &str) -> u8 {
+pub fn calculate_spanish_score(title: &str, category: &str) -> u8 {
     let low = title.to_lowercase();
 
     let is_bili = low.contains("bili") || low.contains("bilibili");
@@ -505,9 +505,10 @@ async fn query_nyaa_rss(
 pub async fn search_anime_generic(
     titles: &[String],
     episode: i32,
+    year: Option<i32>,
 ) -> Result<Vec<TorrentCandidate>, String> {
     let client = crate::build_http_client(15)?;
-
+    let is_classic = year.map(|y| y <= 2015).unwrap_or(false);
 
     let mut all_variants = Vec::new();
     for raw_title in titles {
@@ -526,9 +527,11 @@ pub async fn search_anime_generic(
     let mut combined = Vec::new();
     let mut seen_hashes = HashSet::new();
     let mut last_network_error: Option<String> = None;
-    // Armamos las consultas: hasta 4 variantes (Inglés + Romaji) + formato S02E01 para segundas/terceras temporadas
+
+    // 1. Consultas por episodio (en clásicos usamos 2 variantes principales para dejar espacio a packs)
+    let variant_limit = if is_classic { 2 } else { 4 };
     let mut queries_to_try: Vec<String> = Vec::new();
-    for variant in all_variants.iter().take(4) {
+    for variant in all_variants.iter().take(variant_limit) {
         queries_to_try.push(format!("{} {}", variant, ep_classic));
     }
 
@@ -578,12 +581,49 @@ pub async fn search_anime_generic(
             }
         }
 
-        if combined.iter().any(|c| c.spanish_score >= 90) {
+        // En modernos cortamos si ya tenemos español; en clásicos siempre buscamos packs también
+        if !is_classic && combined.iter().any(|c| c.spanish_score >= 90) {
             break;
         }
     }
 
-    // Respaldo genérico para OVAs/Specials/Packs antiguos que no llevan número de episodio en el título del torrent
+    // 2. Modo Clásico (<= 2015): búsqueda dirigida a packs completos y grupos de re-encode
+    if is_classic {
+        if let Some(primary_title) = all_variants.first() {
+            println!(
+                "[Nyaa Modo Clásico ({})] Buscando batches para: {}",
+                year.unwrap_or(0),
+                primary_title
+            );
+            let classic_queries = [
+                format!("{} Batch", primary_title),
+                format!("{} Complete", primary_title),
+                format!("{} Judas", primary_title),
+                format!("{} \"Anime Time\"", primary_title),
+                format!("{} AnimeRG", primary_title),
+            ];
+
+            for cq in classic_queries {
+                match query_nyaa_rss(&client, &cq, "1_0").await {
+                    Ok(items) => {
+                        for item in items.into_iter().take(25) {
+                            if title_matches_episode(&item.title, episode)
+                                && title_matches_season_context(&item.title, titles)
+                                && seen_hashes.insert(item.info_hash.clone())
+                            {
+                                combined.push(item);
+                            }
+                        }
+                    }
+                    Err(e) => {
+                        last_network_error = Some(e);
+                    }
+                }
+            }
+        }
+    }
+
+    // 3. Respaldo genérico para OVAs/Specials/Packs antiguos (ampliado a take(65))
     if !combined.iter().any(|c| c.spanish_score >= 85) {
         if let Some(primary_title) = all_variants.first() {
             println!(
@@ -592,7 +632,7 @@ pub async fn search_anime_generic(
             );
             match query_nyaa_rss(&client, primary_title, "1_0").await {
                 Ok(items) => {
-                    for item in items.into_iter().take(35) {
+                    for item in items.into_iter().take(65) {
                         if title_matches_episode(&item.title, episode)
                             && title_matches_season_context(&item.title, titles)
                             && seen_hashes.insert(item.info_hash.clone())

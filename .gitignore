@@ -7,3 +7,5 @@ src-tauri/gen/android/app/build/
 *.apk
 *.idsig
 *.keystore
+.env
+.env.*

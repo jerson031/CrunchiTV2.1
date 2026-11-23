@@ -624,7 +624,7 @@ mod android {
     use serde::{Deserialize, Serialize};
     use serde_json::{Value, json};
     use std::sync::Mutex;
-    use tauri::{Emitter, Window};
+    use tauri::{Emitter, Manager, Window};
 
     #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct MediaTrack {
@@ -705,17 +705,132 @@ mod android {
             *guard = Some(window.clone());
         }
 
-        let external_srt = if spanish_score < 85 {
-            crate::subtitles::fetcher::download_spanish_subtitle(
-                anilist_id,
-                &search_titles,
-                episode,
-            )
-            .await
+        println!(
+            "[Android Player] Iniciando '{}', Ep. {} | AniList: {} | spanish_score: {} | search_titles: {:?}",
+            anime_title, episode, anilist_id, spanish_score, search_titles
+        );
+
+        // Guardamos en disco qué se está reproduciendo: el proceso principal de la app renace
+        // cada vez que se abre el reproductor, así que no podemos confiar en memoria.
+        crate::mappings::save_last_play(
+            window.app_handle(),
+            anilist_id,
+            episode,
+            stream_url,
+            anime_title,
+        );
+
+        let sub_dir = window
+            .app_handle()
+            .path()
+            .app_cache_dir()
             .ok()
-        } else {
-            None
-        };
+            .map(|d| d.join("subtitles"));
+
+        // 1) ¿El usuario ya eligió un subtítulo para este episodio? Tiene prioridad absoluta.
+        let mut external_srt: Option<String> = None;
+        if let Some(choice) =
+            crate::mappings::get_subtitle_choice(window.app_handle(), anilist_id, episode)
+        {
+            if std::path::Path::new(&choice.path).exists() {
+                external_srt = Some(choice.path.clone());
+            } else if let Some(dir) = sub_dir.as_deref() {
+                match crate::subtitles::fetcher::restore_subtitle(
+                    &choice.url,
+                    dir,
+                    anilist_id,
+                    episode,
+                )
+                .await
+                {
+                    Ok(p) => external_srt = Some(p),
+                    Err(e) => println!(
+                        "[Android Player] No se pudo restaurar el subtítulo elegido ({}). Se usa selección automática.",
+                        e
+                    ),
+                }
+            }
+        }
+
+        // 2) Selección automática
+        if external_srt.is_none() {
+            // El spanish_score sale solo del TÍTULO del release, no del archivo de este episodio.
+            // Si es alto, verificamos las pistas reales del MKV.
+            let need_external = if spanish_score < 85 {
+                true
+            } else {
+                match tokio::time::timeout(
+                    std::time::Duration::from_secs(8),
+                    crate::subtitles::fetcher::probe_mkv_subtitle_tracks(stream_url),
+                )
+                .await
+                {
+                    Ok(Some(tracks)) => {
+                        println!(
+                            "[Android Player] Pistas de subtítulo en el MKV del Ep. {}: {:?}",
+                            episode, tracks
+                        );
+                        let has_es = crate::subtitles::fetcher::mkv_has_spanish_sub(&tracks);
+                        if !has_es {
+                            println!(
+                                "[Android Player] Este episodio NO trae español interno -> se buscará subtítulo externo."
+                            );
+                        }
+                        !has_es
+                    }
+                    _ => {
+                        println!(
+                            "[Android Player] No se pudieron verificar las pistas del MKV; se asume español nativo."
+                        );
+                        false
+                    }
+                }
+            };
+
+            if need_external {
+                println!(
+                    "[Android Player] Buscando subtítulo externo (score: {})...",
+                    spanish_score
+                );
+                match sub_dir.as_deref() {
+                    None => {
+                        println!("[Android Player] Sin carpeta de caché; no se busca subtítulo.")
+                    }
+                    Some(dir) => {
+                        let search = crate::subtitles::fetcher::download_best_subtitle(
+                            anilist_id,
+                            &search_titles,
+                            episode,
+                            dir,
+                            Some(stream_url),
+                        );
+                        match tokio::time::timeout(std::time::Duration::from_secs(15), search).await
+                        {
+                            Ok(Ok(path)) => {
+                                println!("[Android Player] Subtítulo externo listo: {}", path);
+                                external_srt = Some(path);
+                            }
+                            Ok(Err(e)) => println!(
+                                "[Android Player] Sin subtítulo externo ({}). Reproduciendo solo video/pistas internas.",
+                                e
+                            ),
+                            Err(_) => println!(
+                                "[Android Player] Búsqueda de subtítulos agotó el tiempo (15s). Reproduciendo sin subtítulo externo."
+                            ),
+                        }
+                    }
+                }
+            } else {
+                println!(
+                    "[Android Player] Español nativo disponible en el MKV (verificado o asumido por score >= 85)."
+                );
+            }
+        }
+
+        println!(
+            "[Android Player] Emitiendo 'android-exo-play' (subtitlePath: {:?})",
+            external_srt
+        );
 
         let _ = window.emit(
             "android-exo-play",

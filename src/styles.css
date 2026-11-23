@@ -994,3 +994,631 @@ MODAL DE NOTIFICACIÓN / ERROR PARA TV
 .hidden {
   display: none !important;
 }
+
+/* === MENÚ DESPLEGABLE 10-FOOT UI PARA FILTROS DE CATÁLOGO EN TV === */
+.cr-tv-dropdown {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2600;
+}
+
+.cr-tv-dropdown.hidden {
+  display: none;
+}
+
+.cr-tv-dropdown-panel {
+  background: #141519;
+  border: 2px solid #f47521;
+  border-radius: 12px;
+  width: min(500px, 85vw);
+  max-height: 74vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.95);
+}
+
+.cr-tv-dropdown-header {
+  padding: 16px 22px;
+  background: #1c1e24;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f47521;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cr-tv-dropdown-list {
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cr-tv-dropdown-item {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 17px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cr-tv-dropdown-item.active-opt {
+  color: #f47521;
+  font-weight: 700;
+}
+
+.cr-tv-dropdown-item.focused {
+  background: #f47521;
+  color: #0b0b0d;
+  font-weight: 700;
+  border-color: #ffffff;
+}
+
+/* === COMPACTAR ENCABEZADO DE CATÁLOGO (4 FILTROS EN 1 FILA) === */
+#view-catalogo .catalog-header {
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+#view-catalogo .catalog-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+#view-catalogo .cr-select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 14px;
+  font-size: 15px;
+  text-overflow: ellipsis;
+}
+
+#catalog-range-pills.range-pills-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+#catalog-range-pills.range-pills-row::-webkit-scrollbar {
+  display: none;
+}
+
+#catalog-range-pills .range-pill {
+  flex: 0 0 auto;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+/* =====================================================================
+   MODAL SELECTOR DE FUENTES / RELEASES (FASE 2 - TV 10-FOOT UI)
+   ===================================================================== */
+.source-modal-box {
+  background: #141519;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  width: min(860px, 90vw);
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.95);
+}
+
+.source-modal-header {
+  padding: 18px 24px;
+  background: #1b1d24;
+  border-bottom: 1px solid #2c303b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.source-modal-header h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.source-modal-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.source-modal-list {
+  padding: 14px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.source-item-card {
+  background: #1a1c23;
+  border: 2px solid #2b2f3a;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+  color: #ffffff;
+  transition: transform 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.source-score-pill {
+  min-width: 64px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  background: rgba(244, 117, 33, 0.18);
+  color: var(--accent);
+  border: 1px solid rgba(244, 117, 33, 0.5);
+  flex-shrink: 0;
+}
+
+.source-score-pill.high {
+  background: rgba(42, 189, 187, 0.18);
+  color: #2abdbb;
+  border-color: rgba(42, 189, 187, 0.55);
+}
+
+.source-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.source-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+.source-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.source-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: #d0d4dc;
+  padding: 3px 9px;
+  border-radius: 5px;
+}
+
+.source-tag.cached {
+  background: rgba(42, 189, 187, 0.2);
+  color: #2abdbb;
+}
+
+.source-tag.es {
+  background: rgba(244, 117, 33, 0.2);
+  color: #ff9a52;
+}
+
+.source-item-card.focused,
+.source-item-card:hover {
+  background: var(--accent) !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  transform: scale(1.015);
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.source-item-card.focused .source-item-title,
+.source-item-card:hover .source-item-title {
+  color: #000000 !important;
+}
+
+.source-item-card.focused .source-score-pill,
+.source-item-card:hover .source-score-pill,
+.source-item-card.focused .source-tag,
+.source-item-card:hover .source-tag {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ── Selector de subtítulos ── */
+.sub-preview {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #9a9aa3;
+  max-height: 3.9em;
+  overflow: hidden;
+}
+
+.sub-preview.warn {
+  color: #e0a64a;
+}
+
+.source-tag.ok {
+  background: rgba(60, 180, 110, 0.18);
+  color: #5fd392;
+}
+
+.source-item-card.focused .sub-preview {
+  color: #1a1a1a;
+}
+
+.source-item-card.focused .sub-preview.warn {
+  color: #5c3b00;
+}
+
+.source-item-card.focused .source-tag.ok {
+  color: #0b5a30;
+}
+
+/* =====================================================================
+   TEMA v2 — refinado y ligero para TV (misma paleta; capa de overrides)
+   Para volver al estilo anterior basta con borrar desde aquí hasta el final.
+   Reglas de rendimiento: el foco usa solo transform + borde + sombra corta,
+   sin desenfoques (blur) ni resplandores grandes.
+   ===================================================================== */
+:root {
+  --accent-soft: rgba(244, 117, 33, 0.16);
+  --accent-line: rgba(244, 117, 33, 0.55);
+  --surface-1: #14161c;
+  --surface-2: #1b1e26;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+/* ── Barra lateral ── */
+.sidebar {
+  width: 108px;
+  padding: 22px 10px;
+  background: linear-gradient(180deg, #12141a 0%, #0d0e12 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  margin-bottom: 26px;
+  display: flex;
+  align-items: baseline;
+}
+
+.logo .logo-a {
+  color: var(--accent);
+}
+
+.logo .logo-b {
+  color: #ffffff;
+}
+
+.sidebar nav {
+  gap: 8px;
+}
+
+.nav-btn {
+  position: relative;
+  padding: 11px 6px 9px;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  gap: 5px;
+}
+
+.nav-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.nav-icon {
+  display: block;
+  line-height: 0;
+}
+
+.nav-btn.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: transparent;
+}
+
+.nav-btn.active::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 22%;
+  bottom: 22%;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent);
+}
+
+.nav-btn.active .nav-icon {
+  color: var(--accent);
+}
+
+.nav-btn.focused {
+  background-color: var(--accent-soft) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+  transform: scale(1.04);
+  box-shadow: none;
+}
+
+.nav-btn.focused .nav-icon {
+  color: var(--accent);
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 30px 52px;
+}
+
+.hero-info h1 {
+  font-size: 38px;
+  letter-spacing: -0.3px;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 4px 12px;
+  letter-spacing: 0.8px;
+  background-color: var(--accent-soft);
+}
+
+.play-btn {
+  border-radius: 999px;
+  padding: 12px 28px;
+  border-width: 2px;
+}
+
+.play-btn.focused,
+.play-btn:focus {
+  box-shadow: 0 0 0 3px rgba(244, 117, 33, 0.35);
+  transform: scale(1.04);
+}
+
+/* ── Títulos de sección ── */
+.carousel-section h2,
+.catalog-header h2 {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-section h2::before,
+.catalog-header h2::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Tarjetas ── */
+.anime-card {
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-1);
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.anime-card img {
+  background-color: var(--surface-2);
+}
+
+.card-meta {
+  padding: 10px 12px 14px;
+  background: linear-gradient(180deg, rgba(20, 22, 28, 0.6), var(--surface-1));
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card-ep {
+  font-size: 11.5px;
+  letter-spacing: 0.2px;
+}
+
+.anime-card.focused {
+  border-color: var(--accent) !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px rgba(244, 117, 33, 0.35), 0 10px 22px rgba(0, 0, 0, 0.55);
+}
+
+.catalog-grid .anime-card {
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  background: var(--surface-1);
+}
+
+/* ── Cabeceras, filtros y buscador ── */
+.catalog-header {
+  padding: 22px 52px 16px;
+  background: linear-gradient(180deg, #12141a 0%, #0f1015 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#view-recomendados,
+#view-historial {
+  overflow: hidden;
+}
+
+.cr-select,
+.search-box-row input {
+  background-color: var(--surface-1);
+  border: 1.5px solid #2a2e39;
+  border-radius: var(--radius-md);
+}
+
+.cr-select.focused,
+.cr-select:focus,
+.search-box-row input.focused,
+.search-box-row input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(244, 117, 33, 0.28);
+  transform: none;
+}
+
+.catalog-grid {
+  gap: 20px;
+  padding: 22px 52px 90px;
+}
+
+/* ── Pilas (rangos de episodios / páginas / Viendo-Vistos) ── */
+.range-pills-row {
+  gap: 8px;
+}
+
+.range-pill {
+  background: var(--surface-1);
+  border: 1.5px solid #2a2e39;
+  color: #c9ccd6;
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.range-pill.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-line);
+}
+
+.range-pill.focused,
+.range-pill:focus,
+.range-pill:hover {
+  background: var(--accent) !important;
+  color: #0b0b0d !important;
+  border-color: #ffffff !important;
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px rgba(244, 117, 33, 0.3);
+}
+
+/* ── Detalle y episodios ── */
+.detail-poster {
+  border-radius: var(--radius-lg);
+  border-width: 2px;
+}
+
+.detail-secondary-btn {
+  border-radius: 999px;
+}
+
+.detail-secondary-btn.focused,
+.detail-secondary-btn:focus,
+.detail-secondary-btn:hover {
+  box-shadow: 0 0 0 3px rgba(244, 117, 33, 0.3);
+}
+
+.detail-episodes-section {
+  padding: 22px 52px 90px;
+}
+
+.detail-episodes-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.detail-ep-card {
+  background: var(--surface-1);
+  border: 1.5px solid #2a2e39;
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  font-size: 13.5px;
+}
+
+.detail-ep-card:hover,
+.detail-ep-card.focused,
+.detail-ep-card:focus {
+  box-shadow: 0 0 0 3px rgba(244, 117, 33, 0.3);
+  transform: scale(1.04);
+}
+
+/* ── Modales (fuentes, subtítulos, alertas, desplegables) ── */
+.tv-modal {
+  background: rgba(6, 7, 10, 0.88);
+}
+
+.source-modal-box,
+.tv-modal-box,
+.cr-tv-dropdown-panel {
+  border-radius: 20px;
+  background: linear-gradient(180deg, #181a21 0%, #12141a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+.source-item-card,
+.cr-tv-dropdown-item {
+  border-radius: var(--radius-md);
+}
+
+.source-score-pill {
+  border-radius: 999px;
+}
+
+.source-tag {
+  border-radius: 999px;
+}
+
+/* ── Estados vacíos / carga ── */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 70px 20px;
+  color: var(--text-muted);
+}
+
+.empty-state .empty-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #e9ebf0;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 14px;
+}
+
+.loading-note {
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  padding: 40px 10px;
+  text-align: center;
+}

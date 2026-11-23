@@ -4,7 +4,7 @@ use serde_json::json;
 use std::time::Duration;
 
 const SUBDOMAIN: &str = "graphql";
-
+//xd
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AnimeItem {
     pub id: i32,
@@ -17,6 +17,7 @@ pub struct AnimeItem {
     pub ep: String,
     pub total_episodes: i32,
     pub genres: Vec<String>,
+    pub season_year: Option<i32>,
 }
 
 #[derive(Deserialize)]
@@ -57,12 +58,21 @@ struct AiringScheduleNode {
 }
 
 #[derive(Deserialize)]
+struct StartDate {
+    year: Option<i32>,
+}
+
+#[derive(Deserialize)]
 struct MediaNode {
     id: i32,
     title: MediaTitle,
     synonyms: Option<Vec<String>>,
     episodes: Option<i32>,
     genres: Option<Vec<String>>,
+    #[serde(rename = "seasonYear")]
+    season_year: Option<i32>,
+    #[serde(rename = "startDate")]
+    start_date: Option<StartDate>,
     #[serde(rename = "coverImage")]
     cover_image: CoverImage,
     #[serde(rename = "bannerImage")]
@@ -121,6 +131,10 @@ pub async fn fetch_airing_anime() -> Result<Vec<AnimeItem>, String> {
                     synonyms
                     episodes
                     genres
+                    seasonYear
+                    startDate {
+                        year
+                    }
                     coverImage {
                         extraLarge
                     }
@@ -198,6 +212,10 @@ fn map_nodes_to_items(nodes: Vec<MediaNode>) -> Vec<AnimeItem> {
                 })
                 .collect();
 
+            let resolved_year = node
+                .season_year
+                .or_else(|| node.start_date.and_then(|d| d.year));
+
             AnimeItem {
                 id: node.id,
                 title: display_title,
@@ -209,6 +227,7 @@ fn map_nodes_to_items(nodes: Vec<MediaNode>) -> Vec<AnimeItem> {
                 ep: ep_text,
                 total_episodes,
                 genres: node.genres.unwrap_or_default(),
+                season_year: resolved_year,
             }
         })
         .collect()
@@ -235,6 +254,10 @@ pub async fn search_anime_anilist(search_query: &str) -> Result<Vec<AnimeItem>, 
                     synonyms
                     episodes
                     genres
+                    seasonYear
+                    startDate {
+                        year
+                    }
                     coverImage {
                         extraLarge
                     }

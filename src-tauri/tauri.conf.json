@@ -1,8 +1,8 @@
 {
   "$schema": "https://tauri.app",
-  "productName": "Crunchyroll Casero",
-  "version": "0.1.0",
-  "identifier": "com.crunchyroll.casero.tv",
+  "productName": "NextAnime TV",
+  "version": "1.0.0",
+  "identifier": "com.nextanime.tv",
   "build": {
     "frontendDist": "../src"
   },
@@ -10,7 +10,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Crunchyroll Casero",
+        "title": "NextAnime TV",
         "width": 1280,
         "height": 720,
         "maximized": true,

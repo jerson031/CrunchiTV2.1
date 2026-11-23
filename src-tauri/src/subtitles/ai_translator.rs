@@ -7,9 +7,18 @@ use std::process::Command;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::Duration;
 
-const GEMINI_API_KEY: &str = "";
+/// La clave sale de .env en tiempo de compilación (ver build.rs); no va escrita en el código
+const GEMINI_API_KEY: &str = match option_env!("GEMINI_API_KEY") {
+    Some(k) => k,
+    None => "",
+};
 
 static TRANSLATION_GEN: AtomicU64 = AtomicU64::new(0);
+
+/// Clave integrada (la usan los subtítulos con IA de la TV si no hay gemini_api_key.txt)
+pub fn builtin_key() -> &'static str {
+    GEMINI_API_KEY
+}
 
 // --- AQUÍ VA LA DEFINICIÓN DE LA FUNCIÓN ---
 pub fn cancel_active_translations() {

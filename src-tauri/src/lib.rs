@@ -5,7 +5,7 @@ mod providers;
 mod subtitles;
 use providers::multi_aggregator::search_multi_provider_ranked;
 
-use debrid::torbox::{find_first_cached_hash, resolve_direct_link};
+use debrid::torbox::{find_first_cached_hash, last_pack_episode_files, resolve_direct_link};
 use metadata::anilist::{
     AnimeItem, fetch_airing_anime, fetch_catalog_page, fetch_today_airing_anime,
     search_anime_anilist,
@@ -17,10 +17,14 @@ use player::mpv::{
 
 use serde_json::json;
 use std::collections::HashSet;
-use tauri::{Window, WindowEvent};
+use tauri::{Manager, Window, WindowEvent};
 
 // Recuerda regenerar tu clave en TorBox cuando termines tus pruebas
-const TORBOX_API_KEY: &str = "";
+/// La clave sale de .env en tiempo de compilación (ver build.rs); no va escrita en el código
+const TORBOX_API_KEY: &str = match option_env!("TORBOX_API_KEY") {
+    Some(k) => k,
+    None => "",
+};
 /// Configura la ventana de Tauri para flotar transparente encima de MPV en escritorio
 fn set_osd_window_mode(window: &Window, active: bool) {
     #[cfg(not(target_os = "android"))]
@@ -66,21 +70,43 @@ async fn get_catalog_page(
     fetch_catalog_page(page, 25, genre, sort, year, format).await
 }
 
-#[tauri::command]
-async fn play_anime_episode(
-    window: Window,
-    anilist_id: i32,
-    title: String,
-    title_romaji: String,
-    synonyms: Vec<String>,
-    episode: i32,
-) -> Result<String, String> {
-    // 1. Armamos la lista maestra de títulos y sinónimos sin duplicados ni vacíos
+// --- NUEVO CÓDIGO FASE 2 ---
+mod mappings;
+use mappings::{
+    SavedSourceMapping, SavedSubtitleChoice, clear_subtitle_choice, get_saved_mapping,
+    load_last_play, save_mapping_hint, save_subtitle_choice,
+};
+use providers::multi_aggregator::search_multi_provider_scored;
+use serde::Serialize;
+use tauri::AppHandle;
+
+#[derive(Debug, Clone, Serialize)]
+pub struct SourceOptionDto {
+    pub title: String,
+    pub magnet: String,
+    pub info_hash: String,
+    pub source: String,
+    pub total_pct: u8,
+    pub size_mb: u64,
+    pub seeders: u32,
+    pub resolution_score: u8,
+    pub spanish_score: u8,
+    pub is_cached: bool,
+}
+
+#[derive(Debug, Clone, Serialize)]
+pub struct PlayEpisodeResponse {
+    pub status: String, // "playing" | "select_source"
+    pub played_title: Option<String>,
+    pub reason: Option<String>,
+    pub candidates: Vec<SourceOptionDto>,
+}
+
+fn build_search_titles(title: &str, title_romaji: &str, synonyms: Vec<String>) -> Vec<String> {
     let mut seen_titles = HashSet::new();
     let mut search_titles = Vec::new();
-
-    for raw in std::iter::once(title.clone())
-        .chain(std::iter::once(title_romaji))
+    for raw in std::iter::once(title.to_string())
+        .chain(std::iter::once(title_romaji.to_string()))
         .chain(synonyms.into_iter())
     {
         let clean = raw.trim().to_string();
@@ -88,120 +114,366 @@ async fn play_anime_episode(
             search_titles.push(clean);
         }
     }
+    search_titles
+}
 
-    // 2. Ejecutamos la búsqueda paralela multi-proveedor (Nyaa + Animetosho + Knaben/1337x) con ranking estadístico %
-    let mut candidates = search_multi_provider_ranked(&search_titles, episode).await?;
+#[tauri::command]
+async fn search_episode_sources(
+    title: String,
+    title_romaji: String,
+    synonyms: Vec<String>,
+    episode: i32,
+    year: Option<i32>,
+) -> Result<Vec<SourceOptionDto>, String> {
+    let search_titles = build_search_titles(&title, &title_romaji, synonyms);
+    let mut scored = search_multi_provider_scored(&search_titles, episode, year).await?;
 
-    if candidates.is_empty() {
-        return Err(format!(
-            "No se encontraron fuentes disponibles para {} (Episodio {}).",
-            title, episode
-        ));
-    }
+    if scored.iter().all(|s| s.total_pct < 60) {
+        if let Ok(packs) = search_multi_provider_scored(&search_titles, 0, year).await {
+            let mut existing: HashSet<String> = scored
+                .iter()
+                .map(|s| s.candidate.info_hash.clone())
+                .collect();
 
-    // 3. Consultamos cuáles de esos torrents están en caché instantáneo de TorBox
-    let is_requested_movie = search_titles
-        .iter()
-        .any(|t| t.to_lowercase().contains("movie"));
-
-    if !is_requested_movie {
-        candidates.retain(|c| {
-            let low = c.title.to_lowercase();
-            let looks_like_movie = low.contains("the movie")
-                || low.contains("(movie)")
-                || low.contains("movie 01")
-                || low.contains("movie 1");
-            !looks_like_movie
-        });
-    }
-
-    let hashes: Vec<String> = candidates.iter().map(|c| c.info_hash.clone()).collect();
-    // Filtramos los candidatos que estén en caché respetando el ranking matemático
-    let mut cached_candidates = Vec::new();
-    let mut remaining_hashes = hashes.clone();
-
-    for _ in 0..3 {
-        if let Some(found_hash) = find_first_cached_hash(TORBOX_API_KEY, &remaining_hashes).await? {
-            if let Some(pos) = candidates.iter().position(|c| c.info_hash == found_hash) {
-                cached_candidates.push(candidates.remove(pos));
+            for p in packs {
+                if existing.insert(p.candidate.info_hash.clone()) {
+                    scored.push(p);
+                }
             }
-            remaining_hashes.retain(|h| h != &found_hash);
+            scored.sort_by(|a, b| {
+                b.total_pct
+                    .cmp(&a.total_pct)
+                    .then_with(|| a.candidate.size_mb.cmp(&b.candidate.size_mb))
+            });
+        }
+    }
+
+    let mut cached_hashes = HashSet::new();
+    let mut rem: Vec<String> = scored
+        .iter()
+        .map(|s| s.candidate.info_hash.clone())
+        .collect();
+    for _ in 0..3 {
+        if let Ok(Some(found)) = find_first_cached_hash(TORBOX_API_KEY, &rem).await {
+            cached_hashes.insert(found.clone());
+            rem.retain(|h| h != &found);
         } else {
             break;
         }
     }
+
+    Ok(scored
+        .into_iter()
+        .map(|s| {
+            let is_cached = cached_hashes.contains(&s.candidate.info_hash);
+            SourceOptionDto {
+                title: s.candidate.title,
+                magnet: s.candidate.magnet,
+                info_hash: s.candidate.info_hash,
+                source: s.source,
+                total_pct: s.total_pct,
+                size_mb: s.candidate.size_mb,
+                seeders: s.candidate.seeders,
+                resolution_score: s.candidate.resolution_score,
+                spanish_score: s.candidate.spanish_score,
+                is_cached,
+            }
+        })
+        .collect())
+}
+
+// --- SELECTOR DE SUBTÍTULOS (otro proveedor / mejor coincidencia) ---
+fn subtitle_cache_dir(app: &AppHandle) -> Result<std::path::PathBuf, String> {
+    app.path()
+        .app_cache_dir()
+        .map(|d| d.join("subtitles"))
+        .map_err(|e| format!("No se pudo obtener la carpeta de caché: {}", e))
+}
+
+/// Busca TODOS los subtítulos en español disponibles para el episodio, ya descargados,
+/// analizados y puntuados (mejor primero).
+#[tauri::command]
+async fn search_subtitle_options(
+    app: AppHandle,
+    anilist_id: i32,
+    title: String,
+    title_romaji: String,
+    synonyms: Vec<String>,
+    episode: i32,
+) -> Result<Vec<subtitles::fetcher::SubOption>, String> {
+    let titles = build_search_titles(&title, &title_romaji, synonyms);
+    let dir = subtitle_cache_dir(&app)?;
+    // URL del video que se estaba viendo (para el hash del archivo y su duración)
+    let stream_url = load_last_play(&app, anilist_id, episode).map(|p| p.stream_url);
+    subtitles::fetcher::search_subtitle_options(
+        anilist_id,
+        &titles,
+        episode,
+        &dir,
+        stream_url.as_deref(),
+        true,
+    )
+    .await
+}
+
+/// Guarda la elección del usuario para ese episodio y reinicia la reproducción con ese subtítulo.
+#[tauri::command]
+async fn apply_subtitle_choice(
+    app: AppHandle,
+    window: Window,
+    anilist_id: i32,
+    episode: i32,
+    option: subtitles::fetcher::SubOption,
+    start_ms: Option<i64>,
+) -> Result<(), String> {
+    let dir = subtitle_cache_dir(&app)?;
+    let src = std::path::PathBuf::from(&option.path);
+    if !src.starts_with(&dir) || !src.exists() {
+        return Err("El archivo de subtítulo ya no está disponible. Vuelve a buscar.".to_string());
+    }
+    let kept = subtitles::fetcher::persist_choice(&src, &dir, anilist_id, episode)?;
+
+    let now_secs = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_secs())
+        .unwrap_or(0);
+    save_subtitle_choice(
+        &app,
+        anilist_id,
+        episode,
+        SavedSubtitleChoice {
+            provider: option.provider.clone(),
+            label: option.label.clone(),
+            url: option.url.clone(),
+            path: kept.clone(),
+            format: option.format.clone(),
+            score: option.score,
+            saved_at: now_secs,
+        },
+    )?;
+
+    #[cfg(target_os = "android")]
+    {
+        let last = load_last_play(&app, anilist_id, episode).ok_or_else(|| {
+            "No encuentro el video que estabas viendo. Abre el episodio de nuevo: el subtítulo ya quedó guardado."
+                .to_string()
+        })?;
+        use tauri::Emitter;
+        let _ = window.emit(
+            "android-exo-play",
+            json!({
+                "url": last.stream_url,
+                "title": last.title,
+                "episode": episode,
+                "subtitlePath": kept,
+                "preferSpanish": true,
+                "startMs": start_ms.unwrap_or(0)
+            }),
+        );
+    }
+    #[cfg(not(target_os = "android"))]
+    {
+        let _ = (&window, start_ms);
+        let _ = send_mpv_ipc(json!({
+            "command": ["sub-add", kept.replace('\\', "/"), "select", option.label]
+        }))
+        .await;
+    }
+    Ok(())
+}
+
+/// Traduce con IA (inglés -> español) el subtítulo de este episodio y devuelve una opción lista
+/// para aplicar con `apply_subtitle_choice`. Emite "ai-sub-progress" {phase, done, total}.
+#[tauri::command]
+async fn ai_translate_subtitle(
+    app: AppHandle,
+    window: Window,
+    anilist_id: i32,
+    title: String,
+    episode: i32,
+) -> Result<subtitles::fetcher::SubOption, String> {
+    use tauri::Emitter;
+    let cache = subtitle_cache_dir(&app)?;
+    let perm = app
+        .path()
+        .app_data_dir()
+        .map(|d| d.join("ai_subs"))
+        .map_err(|e| format!("No se pudo obtener la carpeta de datos: {}", e))?;
+    let stream_url = load_last_play(&app, anilist_id, episode).map(|p| p.stream_url);
+    let w = window.clone();
+    let progress = move |phase: &str, done: usize, total: usize| {
+        let _ = w.emit(
+            "ai-sub-progress",
+            json!({ "phase": phase, "done": done, "total": total }),
+        );
+    };
+    subtitles::fetcher::ai_translate_subtitle(
+        anilist_id,
+        &title,
+        episode,
+        &cache,
+        &perm,
+        stream_url.as_deref(),
+        &progress,
+    )
+    .await
+}
+
+/// Olvida la elección manual: el episodio vuelve a usar la selección automática.
+#[tauri::command]
+async fn clear_subtitle_choice_cmd(
+    app: AppHandle,
+    anilist_id: i32,
+    episode: i32,
+) -> Result<(), String> {
+    clear_subtitle_choice(&app, anilist_id, episode)
+}
+
+#[tauri::command]
+async fn play_and_save_source(
+    app: AppHandle,
+    window: Window,
+    anilist_id: i32,
+    title: String,
+    title_romaji: String,
+    synonyms: Vec<String>,
+    episode: i32,
+    magnet: String,
+    info_hash: String,
+    release_title: String,
+    spanish_score: u8,
+) -> Result<String, String> {
+    let search_titles = build_search_titles(&title, &title_romaji, synonyms);
+    let target_season = detect_ordinal_season(&search_titles);
+    let stream_url = resolve_direct_link(TORBOX_API_KEY, &magnet, episode, target_season).await?;
+    // TorBox confirma si el torrent trae varios episodios (pack), aunque el título no lo diga
+    let is_pack = last_pack_episode_files() >= 3;
+    let full_title = format!("{} - Episodio {}", title, episode);
+
+    set_osd_window_mode(&window, true);
+    if let Err(e) = launch_mpv_player(
+        window.clone(),
+        &stream_url,
+        &full_title,
+        search_titles,
+        episode,
+        anilist_id,
+        spanish_score,
+    )
+    .await
+    {
+        set_osd_window_mode(&window, false);
+        return Err(e);
+    }
+
+    let now_secs = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_secs())
+        .unwrap_or(0);
+
+    let _ = save_mapping_hint(
+        &app,
+        anilist_id,
+        episode,
+        SavedSourceMapping {
+            info_hash,
+            magnet,
+            title: release_title,
+            spanish_score,
+            saved_at: now_secs,
+        },
+        is_pack,
+    );
+
+    Ok(full_title)
+}
+
+#[tauri::command]
+async fn play_anime_episode(
+    app: AppHandle,
+    window: Window,
+    anilist_id: i32,
+    title: String,
+    title_romaji: String,
+    synonyms: Vec<String>,
+    episode: i32,
+    year: Option<i32>,
+) -> Result<PlayEpisodeResponse, String> {
+    let search_titles = build_search_titles(&title, &title_romaji, synonyms.clone());
     let target_season = detect_ordinal_season(&search_titles);
 
-    if cached_candidates.is_empty() {
-        println!(
-            "[TorBox Pack Rescue] Ningún suelto en caché para Ep. {} (Temporada {}). Buscando packs...",
-            episode, target_season
-        );
-        if let Ok(mut pack_cands) = search_multi_provider_ranked(&search_titles, 0).await {
-            pack_cands.retain(|c| {
-                let low = c.title.to_lowercase();
-                if !is_requested_movie && (low.contains("the movie") || low.contains("(movie)")) {
-                    return false;
-                }
-                for s in 1..=99 {
-                    if s != target_season {
-                        let wrong_season = low.contains(&format!("season {}", s))
-                            || low.contains(&format!("season {:02}", s))
-                            || low.contains(&format!("(s{:02})", s))
-                            || low.contains(&format!("[s{:02}]", s))
-                            || low.contains(&format!(" s{:02} ", s));
-                        if wrong_season {
-                            return false;
-                        }
-                    }
-                }
-                true
+    // 1. Revisar caché local mappings.json (100% garantizado si ya se eligió)
+    if let Some(saved) = get_saved_mapping(&app, anilist_id, episode) {
+        if let Ok(stream_url) =
+            resolve_direct_link(TORBOX_API_KEY, &saved.magnet, episode, target_season).await
+        {
+            let full_title = format!("{} - Episodio {}", title, episode);
+            set_osd_window_mode(&window, true);
+            if launch_mpv_player(
+                window.clone(),
+                &stream_url,
+                &full_title,
+                search_titles.clone(),
+                episode,
+                anilist_id,
+                saved.spanish_score,
+            )
+            .await
+            .is_ok()
+            {
+                return Ok(PlayEpisodeResponse {
+                    status: "playing".to_string(),
+                    played_title: Some(full_title),
+                    reason: None,
+                    candidates: Vec::new(),
+                });
+            }
+            set_osd_window_mode(&window, false);
+        }
+    }
+
+    // 2. Buscar fuentes ordenadas por %
+    let candidates =
+        search_episode_sources(title.clone(), title_romaji, synonyms, episode, year).await?;
+    let best_cached = candidates.iter().find(|c| c.is_cached);
+
+    // 3. Disparo automático del selector si no hay caché en TorBox o el puntaje es < 75%
+    let chosen = match best_cached {
+        Some(c) if c.total_pct >= 75 => c,
+        _ => {
+            return Ok(PlayEpisodeResponse {
+                status: "select_source".to_string(),
+                played_title: None,
+                reason: Some(
+                    "Coincidencia baja (<75%) o sin caché directo. Elige una fuente:".to_string(),
+                ),
+                candidates,
             });
-
-            let mut rem_pack_hashes: Vec<String> =
-                pack_cands.iter().map(|c| c.info_hash.clone()).collect();
-            for _ in 0..3 {
-                if let Some(found_hash) =
-                    find_first_cached_hash(TORBOX_API_KEY, &rem_pack_hashes).await?
-                {
-                    if let Some(pos) = pack_cands.iter().position(|c| c.info_hash == found_hash) {
-                        cached_candidates.push(pack_cands.remove(pos));
-                    }
-                    rem_pack_hashes.retain(|h| h != &found_hash);
-                } else {
-                    break;
-                }
-            }
         }
-    }
+    };
 
-    if cached_candidates.is_empty() {
-        return Err(format!(
-            "El episodio {} de '{}' aún no está disponible en caché instantáneo.",
-            episode, title
-        ));
-    }
-
-    let mut chosen_pair: Option<(crate::providers::nyaa::TorrentCandidate, String)> = None;
-    let mut last_resolve_err = String::new();
-
-    for cand in cached_candidates {
-        println!("[TorBox] Intentando torrent: {}", cand.title);
-        match resolve_direct_link(TORBOX_API_KEY, &cand.magnet, episode, target_season).await {
-            Ok(url) => {
-                chosen_pair = Some((cand, url));
-                break;
+    // 4. Reproducción directa (>= 75% y en caché)
+    let stream_url =
+        match resolve_direct_link(TORBOX_API_KEY, &chosen.magnet, episode, target_season).await {
+            Ok(u) => u,
+            // El torrent elegido no trae este episodio: en vez de quedarse en un error, se deja elegir
+            Err(e) if e.starts_with("Ningún archivo del torrent") => {
+                println!(
+                    "[Play] La fuente elegida no trae el episodio ({}). Abriendo selector.",
+                    e
+                );
+                return Ok(PlayEpisodeResponse {
+                    status: "select_source".to_string(),
+                    played_title: None,
+                    reason: Some(
+                        "La fuente automática no contenía este episodio. Elige otra:".to_string(),
+                    ),
+                    candidates,
+                });
             }
-            Err(e) => {
-                println!("[TorBox Fallback] Falló '{}': {}", cand.title, e);
-                last_resolve_err = e;
-            }
-        }
-    }
-
-    let (selected, stream_url) = chosen_pair.ok_or(last_resolve_err)?;
-
-    // 5. Iniciamos MPV y superponemos la ventana transparente de Tauri con el OSD estilo Crunchyroll
+            Err(e) => return Err(e),
+        };
+    let is_pack = last_pack_episode_files() >= 3;
     let full_title = format!("{} - Episodio {}", title, episode);
     set_osd_window_mode(&window, true);
     if let Err(e) = launch_mpv_player(
@@ -211,7 +483,7 @@ async fn play_anime_episode(
         search_titles,
         episode,
         anilist_id,
-        selected.spanish_score,
+        chosen.spanish_score,
     )
     .await
     {
@@ -219,8 +491,35 @@ async fn play_anime_episode(
         return Err(e);
     }
 
-    Ok(full_title)
+    // Si la fuente automática era un pack, se recuerda para los capítulos siguientes
+    if is_pack {
+        let now_secs = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|d| d.as_secs())
+            .unwrap_or(0);
+        let _ = save_mapping_hint(
+            &app,
+            anilist_id,
+            episode,
+            SavedSourceMapping {
+                info_hash: chosen.info_hash.clone(),
+                magnet: chosen.magnet.clone(),
+                title: chosen.title.clone(),
+                spanish_score: chosen.spanish_score,
+                saved_at: now_secs,
+            },
+            true,
+        );
+    }
+
+    Ok(PlayEpisodeResponse {
+        status: "playing".to_string(),
+        played_title: Some(full_title),
+        reason: None,
+        candidates: Vec::new(),
+    })
 }
+
 #[tauri::command]
 async fn play_direct_magnet(
     window: Window,
@@ -309,8 +608,23 @@ pub fn build_http_client(timeout_secs: u64) -> Result<reqwest::Client, String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-        .setup(|_app| {
+        .setup(|app| {
             let _ = rustls::crypto::ring::default_provider().install_default();
+            // SubDL (opcional): si existe subdl_api_key.txt en la carpeta de datos, se activa
+            if let Ok(dir) = app.path().app_data_dir() {
+                if let Ok(key) = std::fs::read_to_string(dir.join("subdl_api_key.txt")) {
+                    subtitles::fetcher::set_subdl_key(&key);
+                }
+                // Gemini para los subtítulos con IA: gemini_api_key.txt tiene prioridad sobre la clave integrada
+                match std::fs::read_to_string(dir.join("gemini_api_key.txt")) {
+                    Ok(key) if !key.trim().is_empty() => subtitles::fetcher::set_gemini_key(&key),
+                    _ => {
+                        subtitles::fetcher::set_gemini_key(subtitles::ai_translator::builtin_key())
+                    }
+                }
+            } else {
+                subtitles::fetcher::set_gemini_key(subtitles::ai_translator::builtin_key());
+            }
             Ok(())
         })
         .plugin(tauri_plugin_opener::init())
@@ -332,7 +646,13 @@ pub fn run() {
             mpv_close_player,
             search_anime,
             cancel_episode_load,
-            get_catalog_page
+            get_catalog_page,
+            search_episode_sources,
+            play_and_save_source,
+            search_subtitle_options,
+            apply_subtitle_choice,
+            clear_subtitle_choice_cmd,
+            ai_translate_subtitle,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

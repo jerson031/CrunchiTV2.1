@@ -1,0 +1,1302 @@
+﻿
+11-21 15:56:26.632   697   853 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:56:26.639   697   853 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:56:26.639  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@8c0905c TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448319728 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@921af65} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{3e6a43a 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:56:26.647   697   875 I ActivityManager: Start proc 7364:com.crunchyroll.casero.tv:player/u0a149 for next-top-activity 
+{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}
+11-21 15:56:26.650   697   853 D WindowManager: resumeTopActivity: Restarting ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:56:26.679   697   853 V WindowManager: Moving to RESUMED: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.RootWindowContainer$AttachApplicationHelper.test:3718 com.android.server.wm.RootWindowContainer$AttachApplicationHelper.test:3668 
+com.android.server.wm.ActivityRecord.forAllActivities:4793 com.android.server.wm.WindowContainer.forAllActivities:1760 
+11-21 15:56:26.679   697   853 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:56:26.682   697   853 V WindowManager: Sending position change to ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:56:27.340   697   853 I WindowManager: Resumed activity; dropping state of: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:56:27.351   697   853 D CoreBackPreview: Window{d870048 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@3f68406, mPriority=0, mIsAnimationCallback=false}
+11-21 15:56:27.442   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:56:27.444   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{2208094 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:56:27.447  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@8c0905c: {id=1113 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xe19c8eb sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xcf45648 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:27.449  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1113 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xe19c8eb sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xcf45648 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:27.453   697   862 V WindowManager: Sent Transition #1113 createdAt=11-21 15:56:26.632 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448319728 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{689e919 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:56:27.453   697   862 V WindowManager:     info={id=1113 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x166da92 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:30.001   697  1597 V WindowManager: Finishing activity r=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:56:30.002   697  1597 V WindowManager: Finish needs to pause: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.002   697  1597 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.002   697  1597 V WindowManager: Moving to PAUSING: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.002   697  1597 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:56:30.003   697  1597 V WindowManager: Sending position change to ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:56:30.003   697  1597 V WindowManager: Waiting for top state to be released by ActivityRecord{2208094 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.003   697  1597 V WindowManager: Enqueueing pending pause: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.011   697  1597 V WindowManager: Activity paused: token=Token{631db32 ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:56:30.011   697  1597 V WindowManager: Moving to PAUSED: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:56:30.011   697  1597 V WindowManager: Complete pause: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.011   697  1597 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:56:30.011   697  1597 V WindowManager: Executing finish of activity: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.011   697  1597 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:56:30.071  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@c546a63: {id=1114 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x3eda660 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x3214719 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:30.071   697   862 V WindowManager:     info={id=1114 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x166da92 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:30.071  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1114 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x3eda660 sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x3214719 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:30.074   697  1597 V WindowManager: Stopping ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:56:30.076   697   865 V WindowManager: Stopping ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:56:30.489   697   865 V WindowManager: Stopping ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:56:30.489   697   865 V WindowManager: Ready to stop: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:56:30.489   697   865 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:56:30.489   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:56:30.489   697   865 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:56:30.639   697  1597 D CoreBackPreview: Window{d870048 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:56:30.652   697  1597 V WindowManager: Moving to DESTROYED: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:56:30.652   697  1597 V WindowManager: State movement: ActivityRecord{2208094 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:56:56.459   697  1597 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:56:56.472   697  1597 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:56:56.472  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@380b1b7 TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448349556 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@e7b9d24} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{25b108d 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:56:56.480   697  2623 D WindowManager: resumeTopActivity: Restarting ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:56:56.487   697  2623 V WindowManager: Moving to RESUMED: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:56:56.487   697  2623 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:56:56.489   697  2623 V WindowManager: Sending position change to ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:56:56.493   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{d66bec0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:56:56.644   697  1597 I WindowManager: Resumed activity; dropping state of: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:56:56.653   697  1597 D CoreBackPreview: Window{b5906ec u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2e1e54a, mPriority=0, mIsAnimationCallback=false}
+11-21 15:56:56.728   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:56:56.731   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{d66bec0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:56:56.738  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@380b1b7: {id=1115 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9df3242 sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x664b253 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:56.740   697   862 V WindowManager: Sent Transition #1115 createdAt=11-21 15:56:56.460 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448349556 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{3e10c16 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:56:56.740   697   862 V WindowManager:     info={id=1115 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf475cbb sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:56:56.744  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1115 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9df3242 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x664b253 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:16.678   697  2623 V WindowManager: Finishing activity r=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:57:16.679   697  2623 V WindowManager: Finish needs to pause: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.679   697  2623 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.679   697  2623 V WindowManager: Moving to PAUSING: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.679   697  2623 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:57:16.679   697  2623 V WindowManager: Sending position change to ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:57:16.680   697  2623 V WindowManager: Waiting for top state to be released by ActivityRecord{d66bec0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.680   697  2623 V WindowManager: Enqueueing pending pause: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.709   697  2623 V WindowManager: Activity paused: token=Token{73fd33e ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:57:16.709   697  2623 V WindowManager: Moving to PAUSED: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:57:16.709   697  2623 V WindowManager: Complete pause: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.709   697  2623 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:57:16.709   697  2623 V WindowManager: Executing finish of activity: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:16.709   697  2623 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:57:16.791   697   862 V WindowManager:     info={id=1116 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf475cbb sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:16.791  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@44c5fc1: {id=1116 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9f7c366 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x2eb76a7 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:16.792  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1116 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9f7c366 sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x2eb76a7 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:16.792   697   865 V WindowManager: Stopping ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:57:16.795   697  2623 V WindowManager: Stopping ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:57:17.204   697   865 V WindowManager: Stopping ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:57:17.204   697   865 V WindowManager: Ready to stop: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:57:17.204   697   865 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:57:17.204   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:57:17.204   697   865 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:57:17.290   697  2623 D CoreBackPreview: Window{b5906ec u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:57:17.306   697  2623 V WindowManager: Moving to DESTROYED: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:57:17.306   697  2623 V WindowManager: State movement: ActivityRecord{d66bec0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:57:39.737   697   853 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:57:39.746   697   853 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:57:39.746  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@9b248b5 TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448392834 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@40e4b4a} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{a42cabb 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:57:39.759   697   853 D WindowManager: resumeTopActivity: Restarting ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:57:39.762   697   853 V WindowManager: Moving to RESUMED: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:57:39.762   697   853 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:57:39.765   697   853 V WindowManager: Sending position change to ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:57:39.769   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{f85bc7b u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:57:39.904   697  2623 I WindowManager: Resumed activity; dropping state of: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:57:39.913   697  2623 D CoreBackPreview: Window{ba9a557 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8f53d2d, mPriority=0, mIsAnimationCallback=false}
+11-21 15:57:39.986   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:57:39.988   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{f85bc7b u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:57:39.992  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@9b248b5: {id=1117 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xfd77bd8 sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x78bbb31 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:39.995  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1117 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xfd77bd8 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x78bbb31 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:57:39.995   697   862 V WindowManager: Sent Transition #1117 createdAt=11-21 15:57:39.737 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448392834 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{d157f29 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:57:39.995   697   862 V WindowManager:     info={id=1117 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x6dcf262 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:26.514   697  2623 V WindowManager: Finishing activity r=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:58:26.516   697  2623 V WindowManager: Finish needs to pause: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.516   697  2623 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.516   697  2623 V WindowManager: Moving to PAUSING: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.516   697  2623 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:58:26.516   697  2623 V WindowManager: Sending position change to ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:58:26.516   697  2623 V WindowManager: Waiting for top state to be released by ActivityRecord{f85bc7b u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.517   697  2623 V WindowManager: Enqueueing pending pause: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.526   697  1412 V WindowManager: Activity paused: token=Token{ee62f1 ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:58:26.526   697  1412 V WindowManager: Moving to PAUSED: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:58:26.526   697  1412 V WindowManager: Complete pause: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.526   697  1412 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:58:26.526   697  1412 V WindowManager: Executing finish of activity: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:26.526   697  1412 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:58:26.633   697   862 V WindowManager:     info={id=1118 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x6dcf262 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:26.632  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@1b9a28f: {id=1118 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x52bf91c sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x147c925 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:26.634  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1118 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x52bf91c sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x147c925 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:26.638   697   865 V WindowManager: Stopping ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:26.649   697  2623 V WindowManager: Stopping ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:27.052   697   865 V WindowManager: Stopping ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:58:27.053   697   865 V WindowManager: Ready to stop: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:27.053   697   865 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:58:27.053   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:58:27.053   697   865 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:58:27.131   697  2626 D CoreBackPreview: Window{ba9a557 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:58:27.143   697  2626 V WindowManager: Moving to DESTROYED: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:58:27.144   697  2626 V WindowManager: State movement: ActivityRecord{f85bc7b u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:58:34.253   697  2626 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:58:34.262   697  2626 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:58:34.262  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@72cb223 TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448447350 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@660b320} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{88034d9 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:34.274   697  2626 D WindowManager: resumeTopActivity: Restarting ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:34.277   697  2626 V WindowManager: Moving to RESUMED: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:58:34.277   697  2626 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:58:34.279   697  2626 V WindowManager: Sending position change to ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:58:34.285   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{714f9b8 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:34.339   697  5819 I WindowManager: Resumed activity; dropping state of: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:58:34.345   697  5819 D CoreBackPreview: Window{fbf964 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8838882, mPriority=0, mIsAnimationCallback=false}
+11-21 15:58:34.398   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:34.401   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{714f9b8 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:34.405  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@72cb223: {id=1119 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x786ce9e sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x38e4d7f sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:34.406  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1119 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x786ce9e sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x38e4d7f sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:34.407   697   862 V WindowManager: Sent Transition #1119 createdAt=11-21 15:58:34.254 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448447350 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{6e5aace com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:34.407   697   862 V WindowManager:     info={id=1119 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xa24eb93 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:39.677   697   853 V WindowManager: Finishing activity r=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:58:39.679   697   853 V WindowManager: Finish needs to pause: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.679   697   853 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.679   697   853 V WindowManager: Moving to PAUSING: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.679   697   853 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:58:39.680   697   853 V WindowManager: Sending position change to ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:58:39.680   697   853 V WindowManager: Waiting for top state to be released by ActivityRecord{714f9b8 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.681   697   853 V WindowManager: Enqueueing pending pause: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.705   697   853 V WindowManager: Activity paused: token=Token{1f32f6 ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:58:39.705   697   853 V WindowManager: Moving to PAUSED: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:58:39.705   697   853 V WindowManager: Complete pause: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.705   697   853 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:58:39.706   697   853 V WindowManager: Executing finish of activity: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:39.706   697   853 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:58:39.768   697   862 V WindowManager:     info={id=1120 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xa24eb93 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:39.770  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@35a924d: {id=1120 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xab1f102 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xebe6a13 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:39.770   697   865 V WindowManager: Stopping ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:39.771  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1120 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xab1f102 sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0xebe6a13 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:39.788   697  2626 V WindowManager: Stopping ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:40.186   697   865 V WindowManager: Stopping ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:58:40.186   697   865 V WindowManager: Ready to stop: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:40.186   697   865 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:58:40.187   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:58:40.187   697   865 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:58:40.286   697   851 D CoreBackPreview: Window{fbf964 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:58:40.299   697   851 V WindowManager: Moving to DESTROYED: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:58:40.299   697   851 V WindowManager: State movement: ActivityRecord{714f9b8 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:58:43.358   697  5819 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:58:43.369   697  5819 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:58:43.370  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@6c83581 TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448456455 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@6524626} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{9cba267 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:43.382   697  1412 D WindowManager: resumeTopActivity: Restarting ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:43.385   697  1412 V WindowManager: Moving to RESUMED: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:58:43.385   697  1412 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:58:43.387   697  1412 V WindowManager: Sending position change to ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:58:43.391   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{7581cd7 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:43.453   697  5819 I WindowManager: Resumed activity; dropping state of: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:58:43.460   697  5819 D CoreBackPreview: Window{897af73 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@6643aa9, mPriority=0, mIsAnimationCallback=false}
+11-21 15:58:43.503   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:43.505   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{7581cd7 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:43.509  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@6c83581: {id=1121 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9d9b814 sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xb41a8bd sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:43.510  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1121 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x9d9b814 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xb41a8bd sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:43.511   697   862 V WindowManager: Sent Transition #1121 createdAt=11-21 15:58:43.359 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448456455 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{a1cd865 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:43.512   697   862 V WindowManager:     info={id=1121 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xa42a82e sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:46.619   697  1412 V WindowManager: Finishing activity r=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:58:46.620   697  1412 V WindowManager: Finish needs to pause: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.620   697  1412 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.620   697  1412 V WindowManager: Moving to PAUSING: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.620   697  1412 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:58:46.620   697  1412 V WindowManager: Sending position change to ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:58:46.620   697  1412 V WindowManager: Waiting for top state to be released by ActivityRecord{7581cd7 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.620   697  1412 V WindowManager: Enqueueing pending pause: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.632   697  2623 V WindowManager: Activity paused: token=Token{66740ad ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:58:46.632   697  2623 V WindowManager: Moving to PAUSED: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:58:46.632   697  2623 V WindowManager: Complete pause: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.633   697  2623 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:58:46.633   697  2623 V WindowManager: Executing finish of activity: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:46.633   697  2623 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:58:46.714   697   862 V WindowManager:     info={id=1122 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xa42a82e sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:46.715  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@a9f2a7b: {id=1122 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xad8c098 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x68880f1 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:46.717  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1122 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xad8c098 sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x68880f1 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:46.718   697   851 V WindowManager: Stopping ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:46.719   697   865 V WindowManager: Stopping ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:47.137   697   865 V WindowManager: Stopping ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:58:47.137   697   865 V WindowManager: Ready to stop: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:47.137   697   865 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:58:47.137   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:58:47.137   697   865 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:58:47.206   697   853 D CoreBackPreview: Window{897af73 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:58:47.223   697   851 V WindowManager: Moving to DESTROYED: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:58:47.223   697   851 V WindowManager: State movement: ActivityRecord{7581cd7 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:58:49.358   697  1412 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:58:49.369   697  1412 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:58:49.371  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@89bf64f TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448462456 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@f8e21dc} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{9fda2e5 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:49.380   697   853 D WindowManager: resumeTopActivity: Restarting ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:49.384   697   853 V WindowManager: Moving to RESUMED: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:58:49.384   697   853 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:58:49.386   697   853 V WindowManager: Sending position change to ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:58:49.391   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{9f9e353 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:49.450   697  1412 I WindowManager: Resumed activity; dropping state of: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:58:49.457   697  1412 D CoreBackPreview: Window{5b561af u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@6c26d45, mPriority=0, mIsAnimationCallback=false}
+11-21 15:58:49.506   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:49.507   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{9f9e353 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:49.512  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@89bf64f: {id=1123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xabe51ba sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xfcba86b sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:49.512  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xabe51ba sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xfcba86b sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:49.514   697   862 V WindowManager: Sent Transition #1123 createdAt=11-21 15:58:49.359 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448462456 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{32198c1 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:49.514   697   862 V WindowManager:     info={id=1123 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x671bc9a sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:50.754  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#54
+11-21 15:58:50.788  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:58:50.793  7364 10719 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=0 frameNum=78.
+11-21 15:58:50.794  7364 10719 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:58:50.827  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=78 didProduceBuffer=true
+11-21 15:58:51.773   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=6ms
+11-21 15:58:51.920   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=7ms
+11-21 15:58:52.749   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=20), deliveryTime=3ms
+11-21 15:58:52.894   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=20), deliveryTime=1ms
+11-21 15:58:53.355   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=2ms
+11-21 15:58:53.491   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=2ms
+11-21 15:58:53.548   566   566 E TimeStats: 
+[11179]-[SurfaceView[com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity](BLAST)#11179]-timeRecords is at its maximum size[64]. Ignore this 
+when unittesting.
+11-21 15:58:54.538   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=2ms
+11-21 15:58:54.539   697  5819 V WindowManager: Finishing activity r=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:58:54.540   697  5819 V WindowManager: Finish needs to pause: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.540   697  5819 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.540   697  5819 V WindowManager: Moving to PAUSING: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.540   697  5819 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:58:54.540   697  5819 V WindowManager: Sending position change to ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:58:54.540   697  5819 V WindowManager: Waiting for top state to be released by ActivityRecord{9f9e353 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.540   697  5819 V WindowManager: Enqueueing pending pause: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.550   697  1412 V WindowManager: Activity paused: token=Token{ea04189 ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:58:54.550   697  1412 V WindowManager: Moving to PAUSED: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:58:54.550   697  1412 V WindowManager: Complete pause: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.550   697  1412 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:58:54.550   697  1412 V WindowManager: Executing finish of activity: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:54.551   697  1412 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:58:54.586   697  1412 D InputDispatcher: TFWD: InputWindows 5b561af com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:58:54.586   697  1412 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=5b561af 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=0ms
+11-21 15:58:54.616  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@d62e299: {id=1124 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf7b495e sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x48d113f sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:54.616   697   862 V WindowManager:     info={id=1124 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x671bc9a sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:54.616  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1124 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf7b495e sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x48d113f sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:54.619   697   865 V WindowManager: Stopping ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:54.638   697  2623 V WindowManager: Stopping ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:58:55.034  7364  7364 D VRI[PlayerActivity]: TFWD:visibilityChanged oldVisibility=true newVisibility=false
+11-21 15:58:55.036   697   865 V WindowManager: Stopping ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:58:55.036   697   865 V WindowManager: Ready to stop: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:58:55.036   697   865 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:58:55.036   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:58:55.036   697   865 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:58:55.071  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:58:55.072  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:58:55.072  7364  7364 D VRI[PlayerActivity]: TFWD:Not drawing due to not visible
+11-21 15:58:55.116  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:58:55.119  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:58:55.119   697  2623 D CoreBackPreview: Window{5b561af u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:58:55.121   697  2623 W InputManager-JNI: Input channel object '5b561af com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity 
+(client)' was disposed without first being removed with the input manager!
+11-21 15:58:55.127   697  2627 V WindowManager: Moving to DESTROYED: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:58:55.127   697  2627 V WindowManager: State movement: ActivityRecord{9f9e353 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:58:58.235   697  2627 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:58:58.244   697  2627 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:58:58.244  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@91d40d TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448471332 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@bc16fc2} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{375e1d3 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:58.256   697  2627 D WindowManager: resumeTopActivity: Restarting ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:58.259   697  2627 V WindowManager: Moving to RESUMED: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:58:58.259   697  2627 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:58:58.260   697  2627 D InputDispatcher: TFWD: setFocusedApplication displayId=0 ActivityRecord{2a5638f u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:58.261   697  2627 V WindowManager: Sending position change to ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:58:58.262   697  1097 D TclWifiP2pService: Handler TOP_APP_CHANGE topAppClassName = com.crunchyroll.casero.tv.PlayerActivity topResumedUid = 10149
+11-21 15:58:58.264   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{2a5638f u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:58.325   697   851 I WindowManager: Resumed activity; dropping state of: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:58:58.335   697   851 D CoreBackPreview: Window{71ea9ab u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5b68ba1, mPriority=0, mIsAnimationCallback=false}
+11-21 15:58:58.352  7364  7364 D VRI[PlayerActivity]: reportNextDraw android.view.ViewRootImpl.performTraversals:3882 
+android.view.ViewRootImpl.doTraversal:2563 android.view.ViewRootImpl$TraversalRunnable.run:9549 android.view.Choreographer$CallbackRecord.run:1348 
+android.view.Choreographer$CallbackRecord.run:1357 
+11-21 15:58:58.355  7364  7364 D VRI[PlayerActivity]: Setup new sync=wmsSync-VRI[PlayerActivity]#57
+11-21 15:58:58.355  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#58
+11-21 15:58:58.355  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=false
+11-21 15:58:58.359  7364 10721 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=0 frameNum=1.
+11-21 15:58:58.359  7364 10721 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:58:58.366   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:58:58.366   566   566 D Layer   : TFWD: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11187 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:58:58.366   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11187 
+is hidden cause not visible
+11-21 15:58:58.367   697   851 D InputDispatcher: TFWD: InputWindows 71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:58:58.378  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+11-21 15:58:58.379  7364  7364 D VRI[PlayerActivity]: TFWD:reportDrawFinished
+11-21 15:58:58.382   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:58:58.382   566   566 D Layer   : TFWD: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11187 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:58:58.383   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11187 
+is hidden cause not visible
+11-21 15:58:58.384   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:58:58.385  7364 10913 I OpenGLRenderer: TFWD:First frame:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, duration=49ms; 
+Flags=1, FrameTimelineVsyncId=10575171, IntendedVsync=109890845737232, Vsync=109890845737232, InputEventId=0, HandleInputStart=109890846081632, 
+AnimationStart=109890846083882, PerformTraversalsStart=109890846256298, DrawStart=109890870011381, FrameDeadline=109890862403898, 
+FrameInterval=109890846075382, FrameStartTime=16670358, SyncQueued=109890873372215, SyncStart=109890873478298, IssueDrawCommandsStart=109890873884881, 
+SwapBuffers=109890891955798, FrameCompleted=109890895293715, DequeueBufferDuration=4286917, QueueBufferDuration=606000, GpuCompleted=109890895293715, 
+SwapBuffersCompleted=109890893135131, DisplayPresentTime=5283378028318031960, CommandSubmissionCompleted=109890891955798, 
+11-21 15:58:58.385   697   851 D InputDispatcher: TFWD: InputWindows 71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:58:58.385  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#60
+11-21 15:58:58.387   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{2a5638f u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:58:58.391  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@91d40d: {id=1125 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x31a110 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x694a409 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:58.392   697   862 I ActivityTaskManager: Displayed com.crunchyroll.casero.tv/.PlayerActivity for user 0: +153ms
+11-21 15:58:58.392  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1125 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x31a110 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x694a409 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:58.392   697   862 V WindowManager: Sent Transition #1125 createdAt=11-21 15:58:58.236 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448471332 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{a8f40dd com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:58:58.393   697   862 V WindowManager:     info={id=1125 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xccab1c6 sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:58:58.399  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:58:58.399   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:58:58.401   697  2627 D InputDispatcher: TFWD: InputWindows 71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:58:58.404  7364 10721 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=1 frameNum=3.
+11-21 15:58:58.404  7364 10721 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:58:58.413  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=3 didProduceBuffer=true
+11-21 15:58:58.449   566   566 D SurfaceFlinger: TFWD:Focus Visible window:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity#11189
+11-21 15:58:58.450   697   851 D InputDispatcher: TFWD: Acquire New FocusedWindow: 71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity OK
+11-21 15:58:59.461   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=20), deliveryTime=9ms
+11-21 15:58:59.567  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#64
+11-21 15:58:59.585  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:58:59.588  7364 10721 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=1 frameNum=72.
+11-21 15:58:59.588  7364 10721 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:58:59.596  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=72 didProduceBuffer=true
+11-21 15:58:59.659   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=20), deliveryTime=5ms
+11-21 15:58:59.894   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=22), deliveryTime=2ms
+11-21 15:59:00.088   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=22), deliveryTime=6ms
+11-21 15:59:00.129   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=22), deliveryTime=3ms
+11-21 15:59:00.275   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=22), deliveryTime=3ms
+11-21 15:59:00.343   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=22), deliveryTime=2ms
+11-21 15:59:00.477   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=22), deliveryTime=1ms
+11-21 15:59:00.780   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=23), deliveryTime=1ms
+11-21 15:59:00.870   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=23), deliveryTime=1ms
+11-21 15:59:01.366   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=20), deliveryTime=2ms
+11-21 15:59:01.512   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=20), deliveryTime=2ms
+11-21 15:59:01.590   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=20), deliveryTime=1ms
+11-21 15:59:01.738   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=20), deliveryTime=3ms
+11-21 15:59:01.826   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=20), deliveryTime=1ms
+11-21 15:59:01.918   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=20), deliveryTime=3ms
+11-21 15:59:02.381   566   566 E TimeStats: 
+[11192]-[SurfaceView[com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity](BLAST)#11192]-timeRecords is at its maximum size[64]. Ignore this 
+when unittesting.
+11-21 15:59:03.413   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=23), deliveryTime=1ms
+11-21 15:59:03.491   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=71ea9ab 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=23), deliveryTime=1ms
+11-21 15:59:03.494   697  2623 V WindowManager: Finishing activity r=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:59:03.496   697  2623 V WindowManager: Finish needs to pause: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.496   697  2623 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.496   697  2623 V WindowManager: Moving to PAUSING: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.496   697  2623 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:59:03.496   697  2623 V WindowManager: Sending position change to ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:59:03.497   697  2623 V WindowManager: Waiting for top state to be released by ActivityRecord{2a5638f u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.497   697  2623 V WindowManager: Enqueueing pending pause: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.528   697   851 V WindowManager: Activity paused: token=Token{613f225 ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:59:03.528   697   851 V WindowManager: Moving to PAUSED: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:59:03.528   697   851 V WindowManager: Complete pause: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.528   697   851 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:59:03.528   697   851 V WindowManager: Executing finish of activity: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:03.528   697   851 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:59:03.551   697  2623 D InputDispatcher: TFWD: InputWindows 71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:59:03.584   697   853 D InputDispatcher: TFWD: InputWindows 71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:59:03.589   697   862 V WindowManager:     info={id=1126 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xccab1c6 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:03.589  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@29d8e27: {id=1126 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x78f98d4 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xacda7d sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:03.590  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1126 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x78f98d4 sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0xacda7d sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:03.591   697   865 V WindowManager: Stopping ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:03.607   697  1412 V WindowManager: Stopping ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:04.001  7364  7364 D VRI[PlayerActivity]: TFWD:visibilityChanged oldVisibility=true newVisibility=false
+11-21 15:59:04.003   697   865 V WindowManager: Stopping ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:59:04.003   697   865 V WindowManager: Ready to stop: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:04.003   697   865 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:59:04.003   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:59:04.003   697   865 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:59:04.036  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:04.038  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:04.041  7364  7364 D VRI[PlayerActivity]: TFWD:Not drawing due to not visible
+11-21 15:59:04.089  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:04.089   697  1412 D CoreBackPreview: Window{71ea9ab u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:59:04.090  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:04.099   697  1412 W InputManager-JNI: Input channel object '71ea9ab com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity 
+(client)' was disposed without first being removed with the input manager!
+11-21 15:59:04.104   697  1412 V WindowManager: Moving to DESTROYED: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:59:04.105   697  1412 V WindowManager: State movement: ActivityRecord{2a5638f u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:59:13.979   697  2626 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:59:13.988   697  2626 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:59:13.988  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@e414a3b TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448487076 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@b0cc558} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{2a106b1 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:59:13.996   697  2626 D WindowManager: resumeTopActivity: Restarting ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:14.001   697  2626 V WindowManager: Moving to RESUMED: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:59:14.002   697  2626 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:59:14.002   697  2626 D InputDispatcher: TFWD: setFocusedApplication displayId=0 ActivityRecord{e2271bd u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:14.003   697  1097 D TclWifiP2pService: Handler TOP_APP_CHANGE topAppClassName = com.crunchyroll.casero.tv.PlayerActivity topResumedUid = 10149
+11-21 15:59:14.003   697  2626 V WindowManager: Sending position change to ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:59:14.006   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{e2271bd u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:59:14.064   697  2626 I WindowManager: Resumed activity; dropping state of: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:59:14.073   697  2626 D CoreBackPreview: Window{d896cb9 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@bb2f85f, mPriority=0, mIsAnimationCallback=false}
+11-21 15:59:14.080   697  1059 W InputDispatcher: Waiting because no window has focus but ActivityRecord{e2271bd u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} may eventually add a window when it finishes starting up. Will wait for 10000ms
+11-21 15:59:14.093  7364  7364 D VRI[PlayerActivity]: reportNextDraw android.view.ViewRootImpl.performTraversals:3882 
+android.view.ViewRootImpl.doTraversal:2563 android.view.ViewRootImpl$TraversalRunnable.run:9549 android.view.Choreographer$CallbackRecord.run:1348 
+android.view.Choreographer$CallbackRecord.run:1357 
+11-21 15:59:14.096  7364  7364 D VRI[PlayerActivity]: Setup new sync=wmsSync-VRI[PlayerActivity]#67
+11-21 15:59:14.096  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#68
+11-21 15:59:14.097  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=false
+11-21 15:59:14.099   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:14.099   566   566 D Layer   : TFWD: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11200 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:59:14.099   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11200 
+is hidden cause not visible
+11-21 15:59:14.102  7364 10719 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=0 frameNum=1.
+11-21 15:59:14.102  7364 10719 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:59:14.121  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+11-21 15:59:14.122  7364  7364 D VRI[PlayerActivity]: TFWD:reportDrawFinished
+11-21 15:59:14.123   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:14.125   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{e2271bd u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:59:14.129  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@e414a3b: {id=1127 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xc7ff796 sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x3f04f17 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:14.129  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1127 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xc7ff796 sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x3f04f17 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:14.130  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#70
+11-21 15:59:14.131   697   862 I ActivityTaskManager: Displayed com.crunchyroll.casero.tv/.PlayerActivity for user 0: +147ms
+11-21 15:59:14.133   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:14.133   566   566 D Layer   : TFWD: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11200 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:59:14.133   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11200 
+is hidden cause not visible
+11-21 15:59:14.134   697  1412 D InputDispatcher: TFWD: InputWindows d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:59:14.135  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:59:14.135  7364 10880 I OpenGLRenderer: TFWD:First frame:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, duration=57ms; 
+Flags=1, FrameTimelineVsyncId=10581087, IntendedVsync=109906579075819, Vsync=109906579075819, InputEventId=0, HandleInputStart=109906584598628, 
+AnimationStart=109906584601544, PerformTraversalsStart=109906584791544, DrawStart=109906611588044, FrameDeadline=109906595742485, 
+FrameInterval=109906584586211, FrameStartTime=16668525, SyncQueued=109906616226044, SyncStart=109906616326544, IssueDrawCommandsStart=109906616648961, 
+SwapBuffers=109906633903961, FrameCompleted=109906636843461, DequeueBufferDuration=4353500, QueueBufferDuration=1080167, GpuCompleted=109906636843461, 
+SwapBuffersCompleted=109906635576711, DisplayPresentTime=104309347411, CommandSubmissionCompleted=109906633903961, 
+11-21 15:59:14.136   697   862 V WindowManager: Sent Transition #1127 createdAt=11-21 15:59:13.979 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448487076 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{ab8bb7b com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:59:14.137   697   862 V WindowManager:     info={id=1127 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xb5ae2ac sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:14.146  7364 10719 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=1 frameNum=3.
+11-21 15:59:14.146  7364 10719 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:59:14.150   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:14.151   697  2626 D InputDispatcher: TFWD: InputWindows d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:59:14.157  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=3 didProduceBuffer=true
+11-21 15:59:14.182   566   566 D SurfaceFlinger: TFWD:Focus Visible window:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity#11202
+11-21 15:59:14.183   697   853 D InputDispatcher: TFWD: Acquire New FocusedWindow: d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity OK
+11-21 15:59:14.191   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=23), deliveryTime=115ms
+11-21 15:59:16.332  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#74
+11-21 15:59:16.355  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:59:16.369  7364 10719 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=1 frameNum=136.
+11-21 15:59:16.369  7364 10719 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:59:16.394  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=136 didProduceBuffer=true
+11-21 15:59:17.025   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=1ms
+11-21 15:59:17.221   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=6ms
+11-21 15:59:18.173   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=2ms
+11-21 15:59:18.174   697   853 V WindowManager: Finishing activity r=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:59:18.174   697   853 V WindowManager: Finish needs to pause: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.175   697   853 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.175   697   853 V WindowManager: Moving to PAUSING: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.175   697   853 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:59:18.175   697   853 V WindowManager: Sending position change to ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:59:18.175   697   853 V WindowManager: Waiting for top state to be released by ActivityRecord{e2271bd u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.175   697   853 V WindowManager: Enqueueing pending pause: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.186   697   853 V WindowManager: Activity paused: token=Token{c026f03 ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:59:18.187   697   853 V WindowManager: Moving to PAUSED: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:59:18.187   697   853 V WindowManager: Complete pause: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.187   697   853 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:59:18.187   697   853 V WindowManager: Executing finish of activity: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.187   697   853 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:59:18.220   697   851 D InputDispatcher: TFWD: InputWindows d896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:59:18.220   697   851 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=d896cb9 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=0ms
+11-21 15:59:18.249  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@9033ca5: {id=1128 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf79487a sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x315382b sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:18.252  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1128 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xf79487a sb=Rect(0, 0 - 1920, 1080) 
+eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity 
+t3881})/@0x315382b sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:18.251   697   865 V WindowManager: Stopping ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:18.254   697   862 V WindowManager:     info={id=1128 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0xb5ae2ac sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:18.273   697  2623 V WindowManager: Stopping ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:18.686  7364  7364 D VRI[PlayerActivity]: TFWD:visibilityChanged oldVisibility=true newVisibility=false
+11-21 15:59:18.688   697   865 V WindowManager: Stopping ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:59:18.688   697   865 V WindowManager: Ready to stop: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:18.688   697   865 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:59:18.688   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:59:18.688   697   865 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:59:18.731  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:18.732  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:18.732  7364  7364 D VRI[PlayerActivity]: TFWD:Not drawing due to not visible
+11-21 15:59:18.783   697  2623 D CoreBackPreview: Window{d896cb9 u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:59:18.783  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:18.784  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:18.786   697  2623 W InputManager-JNI: Input channel object 'd896cb9 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity 
+(client)' was disposed without first being removed with the input manager!
+11-21 15:59:18.796   697  2623 V WindowManager: Moving to DESTROYED: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:59:18.796   697  2623 V WindowManager: State movement: ActivityRecord{e2271bd u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+11-21 15:59:26.158   697  2623 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity from:null 
+to:INITIALIZING reason:ActivityRecord ctor
+11-21 15:59:26.164   697  2623 I ActivityTaskManager: START u0 {cmp=com.crunchyroll.casero.tv/.PlayerActivity (has extras)} with LAUNCH_MULTIPLE from uid 
+10149 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+11-21 15:59:26.165  1252  1313 V WindowManagerShell: Transition requested: android.os.BinderProxy@b895059 TransitionRequestInfo { type = OPEN, triggerTask 
+= TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448499253 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 
+token=WCT{android.window.IWindowContainerToken$Stub$Proxy@dc8841e} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true 
+launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{3d594ff 
+com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true 
+isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false 
+isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 
+topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:59:26.170   697   851 D WindowManager: resumeTopActivity: Restarting ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:26.173   697   851 V WindowManager: Moving to RESUMED: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} (starting 
+new instance) callers=com.android.server.wm.ActivityTaskSupervisor.realStartActivityLocked:1004 
+com.android.server.wm.ActivityTaskSupervisor.startSpecificActivity:1078 com.android.server.wm.TaskFragment.resumeTopActivity:1589 
+com.android.server.wm.Task.resumeTopActivityInnerLocked:5091 com.android.server.wm.Task.resumeTopActivityUncheckedLocked:5021 
+11-21 15:59:26.173   697   851 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881} 
+from:INITIALIZING to:RESUMED reason:minimalResumeActivityLocked
+11-21 15:59:26.173   697   851 D InputDispatcher: TFWD: setFocusedApplication displayId=0 ActivityRecord{feb1ce0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:26.174   697  1097 D TclWifiP2pService: Handler TOP_APP_CHANGE topAppClassName = com.crunchyroll.casero.tv.PlayerActivity topResumedUid = 10149
+11-21 15:59:26.174   697   851 V WindowManager: Sending position change to ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, 
+onTop: true
+11-21 15:59:26.176   697   865 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{feb1ce0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:59:26.234   697   851 I WindowManager: Resumed activity; dropping state of: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881}
+11-21 15:59:26.241   697   851 D CoreBackPreview: Window{595270c u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@51e526a, mPriority=0, mIsAnimationCallback=false}
+11-21 15:59:26.260  7364  7364 D VRI[PlayerActivity]: reportNextDraw android.view.ViewRootImpl.performTraversals:3882 
+android.view.ViewRootImpl.doTraversal:2563 android.view.ViewRootImpl$TraversalRunnable.run:9549 android.view.Choreographer$CallbackRecord.run:1348 
+android.view.Choreographer$CallbackRecord.run:1357 
+11-21 15:59:26.263  7364  7364 D VRI[PlayerActivity]: Setup new sync=wmsSync-VRI[PlayerActivity]#77
+11-21 15:59:26.263  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#78
+11-21 15:59:26.263  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=false
+11-21 15:59:26.266   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:26.266   566   566 D Layer   : TFWD: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11213 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:59:26.266   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11213 
+is hidden cause not visible
+11-21 15:59:26.268  7364 10721 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=0 frameNum=1.
+11-21 15:59:26.268  7364 10721 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:59:26.287  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true
+11-21 15:59:26.289  7364  7364 D VRI[PlayerActivity]: TFWD:reportDrawFinished
+11-21 15:59:26.290   697   866 I ActivityTaskManager: TFWD:notifyWindowsDrawn ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}
+11-21 15:59:26.292   697   866 D WindowManager: allResumedActivitiesIdle: rootTask=3881 ActivityRecord{feb1ce0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881} not idle
+11-21 15:59:26.298  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@b895059: {id=1129 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x19052cc sb=Rect(0, 0 - 0, 
+0) eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x9759915 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.299  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1129 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=OPEN f=FILLS_TASK leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x19052cc sb=Rect(0, 0 - 0, 0) 
+eb=Rect(0, 0 - 1920, 1080) d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0x9759915 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.299   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:26.299   566   566 D Layer   : TFWD: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11213 isHiddenByPolicy 
+s.flags&layer_state_t::eLayerHidden=1
+11-21 15:59:26.299   566   566 D Layer   : TFWD: isHiddenByPolicy parent ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}#11213 
+is hidden cause not visible
+11-21 15:59:26.294  7364  7364 D VRI[PlayerActivity]: Creating new active sync group VRI[PlayerActivity]#80
+11-21 15:59:26.300   697   851 D InputDispatcher: TFWD: InputWindows 595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:59:26.301  7364 10880 I OpenGLRenderer: TFWD:First frame:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, duration=57ms; 
+Flags=1, FrameTimelineVsyncId=10586373, IntendedVsync=109918745745253, Vsync=109918745745253, InputEventId=0, HandleInputStart=109918753110375, 
+AnimationStart=109918753113292, PerformTraversalsStart=109918753362042, DrawStart=109918778443542, FrameDeadline=109918762411919, 
+FrameInterval=109918753099292, FrameStartTime=16668098, SyncQueued=109918782362625, SyncStart=109918782467208, IssueDrawCommandsStart=109918782777958, 
+SwapBuffers=109918800492542, FrameCompleted=109918803554375, DequeueBufferDuration=4331083, QueueBufferDuration=490250, GpuCompleted=109918803554375, 
+SwapBuffersCompleted=109918801603792, DisplayPresentTime=5283378028318031960, CommandSubmissionCompleted=109918800492542, 
+11-21 15:59:26.302   697   862 I ActivityTaskManager: Displayed com.crunchyroll.casero.tv/.PlayerActivity for user 0: +135ms
+11-21 15:59:26.303  7364  7364 D VRI[PlayerActivity]: registerCallbacksForSync syncBuffer=true
+11-21 15:59:26.308   697   862 V WindowManager: Sent Transition #1129 createdAt=11-21 15:59:26.158 via request=TransitionRequestInfo { type = OPEN, 
+triggerTask = TaskInfo{userId=0 taskId=3881 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN 
+cat=[android.intent.category.LEANBACK_LAUNCHER] flg=0x10200000 cmp=com.crunchyroll.casero.tv/.MainActivity } 
+baseActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} 
+topActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity} origActivity=null 
+realActivity=ComponentInfo{com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.MainActivity} numActivities=2 lastActiveTime=448499253 
+supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c7281b0 Task{5ca9905 #3881 
+type=standard A=10149:com.crunchyroll.casero.tv}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 
+lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{2c72b36 com.crunchyroll.casero.tv.PlayerActivity} launchCookies=[] 
+positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false 
+topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 
+topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 
+cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-21 15:59:26.308   697   862 V WindowManager:     info={id=1129 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=OPEN f=FILLS_TASK 
+leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x301935b sb=Rect(0, 0 - 0, 0) eb=Rect(0, 0 - 1920, 1080) 
+d=-1->0 r=-1->0:-1},{null m=TO_BACK f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.310  7364 10721 D VRI[PlayerActivity]: TFWD:Received frameDrawingCallback syncResult=1 frameNum=3.
+11-21 15:59:26.310  7364 10721 D VRI[PlayerActivity]: Setting up sync and frameCommitCallback
+11-21 15:59:26.316   566   566 D SurfaceFlinger: TFWD:Find Focus windowName=595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity, 
+notVisible=1
+11-21 15:59:26.317   697   851 D InputDispatcher: TFWD: InputWindows 595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NOT_VISIBLE
+11-21 15:59:26.321  7364 10700 D VRI[PlayerActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=3 didProduceBuffer=true
+11-21 15:59:26.349   566   566 D SurfaceFlinger: TFWD:Focus Visible window:com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity#11215
+11-21 15:59:26.350   697   853 D InputDispatcher: TFWD: Acquire New FocusedWindow: 595270c 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity OK
+11-21 15:59:26.371   697  1059 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=595270c 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=0, keyCode=4), deliveryTime=11ms
+11-21 15:59:26.373   697   853 V WindowManager: Finishing activity r=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881}, result=0, 
+data=null, reason=app-request
+11-21 15:59:26.375   697   853 V WindowManager: Finish needs to pause: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.375   697   853 D WindowManager: startPausing: taskFrag =Task{5ca9905 #3881 type=standard A=10149:com.crunchyroll.casero.tv} 
+mResumedActivity=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.375   697   853 V WindowManager: Moving to PAUSING: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.375   697   853 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:RESUMED 
+to:PAUSING reason:startPausingLocked
+11-21 15:59:26.375   697   853 V WindowManager: Sending position change to ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}, 
+onTop: false
+11-21 15:59:26.375   697   853 V WindowManager: Waiting for top state to be released by ActivityRecord{feb1ce0 u0 
+com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.375   697   853 V WindowManager: Enqueueing pending pause: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.388   697   853 V WindowManager: Activity paused: token=Token{69ae5e ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity 
+t3881 f}}}, timeout=false
+11-21 15:59:26.388   697   853 V WindowManager: Moving to PAUSED: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}  (pause 
+complete)
+11-21 15:59:26.388   697   853 V WindowManager: Complete pause: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.388   697   853 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSING 
+to:PAUSED reason:completePausedLocked
+11-21 15:59:26.388   697   853 V WindowManager: Executing finish of activity: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.388   697   853 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} from:PAUSED 
+to:STOPPING reason:completeFinishing
+11-21 15:59:26.401   697  2623 D InputDispatcher: TFWD: InputWindows 595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:59:26.401   697  2623 D InputDispatcher: TIDD: publishKeyEvent(inputChannel=595270c 
+com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity (server), action=1, keyCode=4), deliveryTime=0ms
+11-21 15:59:26.409   697   851 V WindowManager: Stopping ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:26.417   697   851 D InputDispatcher: TFWD: InputWindows 595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity is 
+NO_WINDOW
+11-21 15:59:26.433  1252  1313 V WindowManagerShell: onTransitionReady android.os.BinderProxy@84b1993: {id=1130 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] 
+c=[{null m=CLOSE f=FILLS_TASK|IS_OCCLUDED leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x476ddd0 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xd1201c9 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.438   697   862 V WindowManager:     info={id=1130 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null m=CLOSE f=FILLS_TASK|IS_OCCLUDED 
+leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x301935b sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 
+1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 com.crunchyroll.casero.tv/.MainActivity t3881})/@0x431e81d 
+sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.456   697   865 V WindowManager: Stopping ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=true finishing=true
+11-21 15:59:26.458  1252  1313 V WindowManagerShell: start default transition animation, info = {id=1130 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{null 
+m=CLOSE f=FILLS_TASK|IS_OCCLUDED leash=Surface(name=ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881})/@0x476ddd0 sb=Rect(0, 0 - 
+1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{null m=TO_FRONT f=FILLS_TASK leash=Surface(name=ActivityRecord{a19376f u0 
+com.crunchyroll.casero.tv/.MainActivity t3881})/@0xd1201c9 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+11-21 15:59:26.870  7364  7364 D VRI[PlayerActivity]: TFWD:visibilityChanged oldVisibility=true newVisibility=false
+11-21 15:59:26.871   697   865 V WindowManager: Stopping ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}: nowVisible=true 
+animating=false finishing=true
+11-21 15:59:26.871   697   865 V WindowManager: Ready to stop: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}}
+11-21 15:59:26.871   697   865 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:STOPPING to:FINISHING reason:destroyIfPossible
+11-21 15:59:26.871   697   865 V WindowManager: Moving to DESTROYING: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(destroy requested)
+11-21 15:59:26.872   697   865 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:FINISHING to:DESTROYING reason:destroyActivityLocked. finishing and not skipping destroy
+11-21 15:59:26.890  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:26.891  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:26.891  7364  7364 D VRI[PlayerActivity]: TFWD:Not drawing due to not visible
+11-21 15:59:26.902   697  2623 D CoreBackPreview: Window{595270c u0 com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity}: Setting back 
+callback null
+11-21 15:59:26.902  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:26.902  7364  7364 D VRI[PlayerActivity]: TFWD:applyTransactionOnDraw applyImmediately
+11-21 15:59:26.905   697  2623 W InputManager-JNI: Input channel object '595270c com.crunchyroll.casero.tv/com.crunchyroll.casero.tv.PlayerActivity 
+(client)' was disposed without first being removed with the input manager!
+11-21 15:59:26.908   697   851 V WindowManager: Moving to DESTROYED: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+(removed from history)
+11-21 15:59:26.908   697   851 V WindowManager: State movement: ActivityRecord{feb1ce0 u0 com.crunchyroll.casero.tv/.PlayerActivity t3881 f}} 
+from:DESTROYING to:DESTROYED reason:removeFromHistory
+
+

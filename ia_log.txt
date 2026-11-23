@@ -1,0 +1,15 @@
+﻿
+11-20 23:11:58.050 30059 31933 I RustStdoutStderr: [WARNING:android_webview/browser/gfx/display_webview.cc:33] WebView overlays are enabled!
+11-20 23:12:08.032 30059 31933 I RustStdoutStderr: [Mappings HIT EXACTO] key=11757:2 | title='[HorribleSubs] Sword Art Online - 02 [1080p].mkv' | 
+hash=eff4b439c6d0b832e2ecbe583efd39bfc7a2fec4
+11-20 23:12:09.116 30059 31933 I RustStdoutStderr: [TorBox] Candidato Ep. 2: 105 pts: [HorribleSubs] Sword Art Online - 02 [1080p]/[HorribleSubs] Sword Art 
+Online - 02 [1080p].mkv
+11-20 23:12:09.116 30059 31933 I RustStdoutStderr: [TorBox] Archivo seleccionado (Ep. 2): [HorribleSubs] Sword Art Online - 02 [1080p].mkv [coincidencia 
+directa]
+11-20 23:12:09.488 30059 31933 I RustStdoutStderr: [Android Player] Iniciando 'Sword Art Online - Episodio 2', Ep. 2 | AniList: 11757 | spanish_score: 40 | 
+search_titles: ["Sword Art Online", "S.A.O", "SAO"]
+11-20 23:12:09.490 30059 31933 I RustStdoutStderr: [Subtítulo ELEGIDO] key=11757:2 | Español Latino (traducido con IA) (IA (Gemini)) | 85 pts
+11-20 23:12:09.490 30059 31933 I RustStdoutStderr: [Android Player] Emitiendo 'android-exo-play' (subtitlePath: 
+Some("/data/user/0/com.crunchyroll.casero.tv/cache/subtitles/crunchy_subchoice_11757_ep2.srt"))
+
+

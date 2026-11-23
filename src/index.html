@@ -4,26 +4,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crunchyroll Casero</title>
+  <title>NextAnime TV</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <!-- Barra lateral mínima estilo Crunchyroll TV -->
   <aside class="sidebar">
-    <div class="logo">CR<span>TV</span></div>
+    <div class="logo" id="app-logo"><span class="logo-a">NX</span><span class="logo-b">TV</span></div>
     <nav>
       <button class="nav-btn active" data-tab="inicio">
-        <span class="nav-icon">⌂</span>
+        <span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 11.5 12 4l9 7.5" />
+            <path d="M5 10v10h5v-6h4v6h5V10" />
+          </svg></span>
         <span class="nav-label">Inicio</span>
       </button>
       <button class="nav-btn" data-tab="catalogo">
-        <span class="nav-icon">⊞</span>
+        <span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+            <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+            <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+            <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+          </svg></span>
         <span class="nav-label">Catálogo</span>
       </button>
       <button class="nav-btn" data-tab="buscar">
-        <span class="nav-icon">⌕</span>
+        <span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="m20 20-4.2-4.2" />
+          </svg></span>
         <span class="nav-label">Buscar</span>
+      </button>
+      <button class="nav-btn" data-tab="recomendados">
+        <span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" />
+          </svg></span>
+        <span class="nav-label">Para ti</span>
+      </button>
+      <button class="nav-btn" data-tab="historial">
+        <span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1" />
+            <path d="M3.5 4.5v4h4" />
+            <path d="M12 7.5V12l3 2" />
+          </svg></span>
+        <span class="nav-label">Mi lista</span>
       </button>
     </nav>
   </aside>
@@ -128,6 +158,29 @@
       <div class="catalog-grid" id="search-grid"></div>
     </div>
 
+    <!-- VISTA 5: PARA TI (RECOMENDACIONES) -->
+    <div id="view-recomendados" class="tab-view hidden">
+      <div class="catalog-header">
+        <div class="catalog-title-bar">
+          <h2>Para ti</h2>
+          <span class="section-hint" id="reco-sub">Basado en lo que ves</span>
+        </div>
+      </div>
+      <div class="catalog-grid" id="reco-grid"></div>
+    </div>
+
+    <!-- VISTA 6: MI LISTA (VIENDO / VISTOS) -->
+    <div id="view-historial" class="tab-view hidden">
+      <div class="catalog-header">
+        <div class="catalog-title-bar">
+          <h2>Mi lista</h2>
+          <span class="section-hint">Se guarda solo en esta TV</span>
+        </div>
+        <div id="historial-pills" class="range-pills-row"></div>
+      </div>
+      <div class="catalog-grid" id="historial-grid"></div>
+    </div>
+
     <!-- VISTA 4: DETALLE DEL ANIME Y SELECTOR DE EPISODIOS -->
     <div id="view-detail" class="tab-view hidden">
       <div class="detail-hero" id="detail-hero">
@@ -146,6 +199,7 @@
                 <button id="detail-play-first" class="play-btn">▶ Ver Episodio 1</button>
                 <button id="detail-play-latest" class="detail-secondary-btn">⚡ Ver Último Episodio</button>
               </div>
+
             </div>
           </div>
         </div>

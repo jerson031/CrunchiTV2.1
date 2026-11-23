@@ -1,0 +1,9 @@
+﻿
+11-21 16:46:57.187 10726 13339 I RustStdoutStderr: [TorBox] Candidato Ep. 8: -75 pts: [Erai-raws] Black Clover 2nd Season - 05 [1080p CR WEBRip 
+HEVC AAC][MultiSub][8128624C]/[Erai-raws] Black Clover 2nd Season - 05 [1080p CR WEBRip HEVC AAC][MultiSub][8128624C].mkv
+11-21 16:47:23.045 10726 13339 I RustStdoutStderr: [TorBox] Candidato Ep. 2: 105 pts: [Erai-raws] Golden Kamuy OVA - 02 [1080p CR WEBRip HEVC 
+EAC3][MultiSub][17C60A16]/[Erai-raws] Golden Kamuy OVA - 02 [1080p CR WEBRip HEVC EAC3][MultiSub][17C60A16].mkv
+11-21 16:47:23.045 10726 13339 I RustStdoutStderr: [TorBox] Archivo seleccionado (Ep. 2): [Erai-raws] Golden Kamuy OVA - 02 [1080p CR WEBRip HEVC 
+EAC3][MultiSub][17C60A16].mkv [coincidencia directa]
+
+
