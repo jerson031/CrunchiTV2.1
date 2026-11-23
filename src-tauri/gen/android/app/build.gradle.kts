@@ -87,11 +87,13 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
-    implementation("androidx.media3:media3-exoplayer:1.4.1")
-    implementation("androidx.media3:media3-ui:1.4.1")
-    implementation("androidx.media3:media3-common:1.4.1")
-    implementation("androidx.media3:media3-extractor:1.4.1")
-    implementation("com.github.anilbeesetti.nextlib:nextlib-media3ext:0.8.2")
+    val media3Version = "1.11.1"
+    implementation("androidx.media3:media3-exoplayer:$media3Version")
+    implementation("androidx.media3:media3-ui:$media3Version")
+    implementation("androidx.media3:media3-common:$media3Version")
+    implementation("androidx.media3:media3-extractor:$media3Version")
+    // NextLib: versión "<media3>-<nextlib>" publicada en Maven Central
+    implementation("io.github.anilbeesetti:nextlib-media3ext:1.11.1-0.16.0")
 }
 
 apply(from = file("tauri.build.gradle.kts"))
