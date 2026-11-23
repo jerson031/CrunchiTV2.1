@@ -93,7 +93,7 @@ dependencies {
     implementation("androidx.media3:media3-common:$media3Version")
     implementation("androidx.media3:media3-extractor:$media3Version")
     // NextLib: versión "<media3>-<nextlib>" publicada en Maven Central
-    implementation("io.github.anilbeesetti:nextlib-media3ext:1.11.1-0.16.0")
+    implementation("io.github.anilbeesetti:nextlib-media3ext:1.11.1-0.18.0")
 }
 
 apply(from = file("tauri.build.gradle.kts"))

@@ -37,6 +37,8 @@ import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.DefaultLoadControl
 import androidx.media3.exoplayer.DefaultRenderersFactory
 import io.github.anilbeesetti.nextlib.media3ext.ffdecoder.NextRenderersFactory
+import io.github.anilbeesetti.nextlib.media3ext.ffdecoder.FfmpegSubtitleExtractorsFactory
+import io.github.anilbeesetti.nextlib.media3ext.ffdecoder.withFfmpegSubtitles
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.SeekParameters
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
@@ -112,7 +114,11 @@ class PlayerActivity : AppCompatActivity() {
             .setReadTimeoutMs(20_000)
 
         val dataSourceFactory = DefaultDataSource.Factory(this, httpDataSourceFactory)
-        val normalMediaSourceFactory = DefaultMediaSourceFactory(dataSourceFactory)
+        // Subtítulos ASS/SSA con estilo (libass de NextLib). Si algo falla, el reintento de onPlayerError
+        // usa safeMediaSourceFactory (sin libass), así que el comportamiento anterior queda como respaldo.
+        val normalMediaSourceFactory = DefaultMediaSourceFactory(this, FfmpegSubtitleExtractorsFactory())
+            .setDataSourceFactory(dataSourceFactory)
+            .withFfmpegSubtitles(dataSourceFactory)
         val safeMediaSourceFactory = DefaultMediaSourceFactory(dataSourceFactory)
             .experimentalParseSubtitlesDuringExtraction(false)
 
